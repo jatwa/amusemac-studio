@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -6,6 +6,7 @@ import { projects } from '@/data/projects';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ArrowLeft, Film, MapPin, Calendar, Clock, Sparkles } from 'lucide-react';
+import { CinematicPlayer } from '@/components/CinematicPlayer';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -64,9 +65,14 @@ export default async function ProjectPage({ params }: Props) {
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono-film text-[#F4EFE6]/60">
             <span className="text-[#D89B37] font-bold">PROJECT // {project.id}</span>
             <span>•</span>
-            <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5 text-[#D89B37]" />{project.year}</span>
-            <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#D89B37]" />{project.location}</span>
-            <span className="px-2 py-0.5 rounded bg-[#F4EFE6]/10 text-[#F4EFE6]/90 border border-[#F4EFE6]/15">{project.aspectRatio}</span>
+            {project.year && <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5 text-[#D89B37]" />{project.year}</span>}
+            {project.location && <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#D89B37]" />{project.location}</span>}
+            {project.aspectRatio && <span className="px-2 py-0.5 rounded bg-[#F4EFE6]/10 text-[#F4EFE6]/90 border border-[#F4EFE6]/15">{project.aspectRatio}</span>}
+            {project.hasVerifiedVideo && (
+              <span className="px-2.5 py-0.5 rounded bg-[#D89B37]/20 text-[#D89B37] font-bold border border-[#D89B37]/40">
+                OFFICIAL VERIFIED VIDEO
+              </span>
+            )}
           </div>
 
           <h1 className="text-5xl sm:text-8xl font-black uppercase tracking-tighter text-[#F4EFE6] leading-none">
@@ -78,20 +84,31 @@ export default async function ProjectPage({ params }: Props) {
           </p>
         </div>
 
-        {/* Hero Still Frame */}
-        <div className="relative aspect-cinema w-full overflow-hidden rounded-xs border border-[#F4EFE6]/20 shadow-2xl bg-[#18181A]">
-          <Image
-            src={project.heroImage}
-            alt={project.title}
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/70 backdrop-blur-md rounded text-xs font-mono-film text-[#F4EFE6]/90">
-            KEYFRAME STILL // {project.aspectRatio}
+        {/* Primary Video or Hero Still Frame */}
+        {project.hasVerifiedVideo && project.embedUrl ? (
+          <div className="w-full">
+            <CinematicPlayer
+              posterUrl={project.heroImage}
+              embedUrl={project.embedUrl}
+              title={project.title}
+              aspect="video"
+            />
           </div>
-        </div>
+        ) : (
+          <div className="relative aspect-cinema w-full overflow-hidden rounded-xs border border-[#F4EFE6]/20 shadow-2xl bg-[#18181A]">
+            <Image
+              src={project.heroImage}
+              alt={project.title}
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/70 backdrop-blur-md rounded text-xs font-mono-film text-[#F4EFE6]/90">
+              KEYFRAME STILL // {project.aspectRatio || '35MM'}
+            </div>
+          </div>
+        )}
 
         {/* Logline & Synopsis */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 py-8 border-y border-[#F4EFE6]/10">

@@ -1,10 +1,11 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { X, Film, Sparkles, MapPin, Calendar, Clock, Tag } from 'lucide-react';
 import { Project } from '@/data/projects';
 import { soundEngine } from '@/lib/audio';
+import { CinematicPlayer } from '@/components/CinematicPlayer';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -55,6 +56,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             <span>ARCHIVE // {project.id}</span>
             <span className="text-[#F4EFE6]/40">•</span>
             <span className="text-[#F4EFE6]/70 uppercase">{project.category}</span>
+            {project.hasVerifiedVideo && (
+              <span className="ml-2 px-2 py-0.5 rounded bg-[#D89B37]/15 text-[#D89B37] text-[10px] border border-[#D89B37]/30">
+                VERIFIED FILM
+              </span>
+            )}
           </div>
 
           <button
@@ -76,10 +82,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {/* Title & Metadata */}
           <div className="space-y-4">
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono-film text-[#F4EFE6]/60">
-              <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#D89B37]" />{project.year}</span>
-              <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#D89B37]" />{project.location}</span>
+              {project.year && <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#D89B37]" />{project.year}</span>}
+              {project.location && <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#D89B37]" />{project.location}</span>}
               {project.duration && <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-[#D89B37]" />{project.duration}</span>}
-              <span className="px-2 py-0.5 rounded bg-[#F4EFE6]/10 text-[#F4EFE6]/90 border border-[#F4EFE6]/15">{project.aspectRatio}</span>
+              {project.aspectRatio && <span className="px-2 py-0.5 rounded bg-[#F4EFE6]/10 text-[#F4EFE6]/90 border border-[#F4EFE6]/15">{project.aspectRatio}</span>}
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-black tracking-tighter uppercase text-[#F4EFE6] leading-none">
@@ -91,20 +97,31 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </p>
           </div>
 
-          {/* Hero Still with 35mm Frame Border */}
-          <div className="relative aspect-cinema w-full overflow-hidden rounded-sm border border-[#F4EFE6]/20 shadow-xl bg-[#18181A]">
-            <Image
-              src={project.heroImage}
-              alt={project.title}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1200px) 100vw, 900px"
-            />
-            <div className="absolute top-3 left-3 px-2 py-1 bg-black/70 backdrop-blur-xs rounded text-[10px] font-mono-film text-[#F4EFE6]/80">
-              KEYFRAME STILL // {project.aspectRatio}
+          {/* Primary Cinematic Player or Hero Still */}
+          {project.hasVerifiedVideo && project.embedUrl ? (
+            <div className="w-full">
+              <CinematicPlayer
+                posterUrl={project.heroImage}
+                embedUrl={project.embedUrl}
+                title={project.title}
+                aspect="video"
+              />
             </div>
-          </div>
+          ) : (
+            <div className="relative aspect-cinema w-full overflow-hidden rounded-sm border border-[#F4EFE6]/20 shadow-xl bg-[#18181A]">
+              <Image
+                src={project.heroImage}
+                alt={project.title}
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1200px) 100vw, 900px"
+              />
+              <div className="absolute top-3 left-3 px-2 py-1 bg-black/70 backdrop-blur-xs rounded text-[10px] font-mono-film text-[#F4EFE6]/80">
+                KEYFRAME STILL // {project.aspectRatio || '35MM'}
+              </div>
+            </div>
+          )}
 
           {/* Logline & Synopsis */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-4 border-y border-[#F4EFE6]/10">

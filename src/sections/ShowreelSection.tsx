@@ -36,7 +36,7 @@ export function ShowreelSection() {
         <div className="w-full">
           <CinematicPlayer
             posterUrl={amusemacMedia.projects.musicVideos}
-            videoUrl="https://assets.mixkit.co/videos/preview/mixkit-silhouette-of-a-man-in-front-of-a-fire-41557-large.mp4"
+            embedUrl="https://www.youtube.com/embed/NeBcPlOF57Q"
             title="AMUSEMAC STUDIO // MAD ABOUT CINEMA"
           />
         </div>

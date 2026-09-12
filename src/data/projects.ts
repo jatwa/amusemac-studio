@@ -1,4 +1,5 @@
 import { amusemacMedia } from '@/lib/media';
+import { amusemacVideos } from '@/lib/videos';
 
 export interface ProjectCredit {
   role: string;
@@ -16,8 +17,8 @@ export interface Project {
   aspectRatio?: string;
   duration?: string;
   location?: string;
-  logline: string;
-  synopsis: string;
+  logline?: string;
+  synopsis?: string;
   heroImage: string;
   gallery: {
     url: string;
@@ -31,6 +32,8 @@ export interface Project {
   featured: boolean;
   horizontalFeature?: boolean;
   videoUrl?: string;
+  embedUrl?: string;
+  hasVerifiedVideo: boolean;
   quote?: {
     text: string;
     author: string;
@@ -45,22 +48,23 @@ export const projects: Project[] = [
     subtitle: 'सच, करीब से दिखता है (Featuring Pankaj Tripathi)',
     category: 'Advertisement',
     client: 'Dainik Bhaskar',
-    year: '2023',
     aspectRatio: '16:9 Commercial',
-    location: 'Mumbai / North India',
-    logline: '“Sach, Kareeb Se Dikhta Hai” — A grounded, human commercial campaign bringing out the gritty truth of real journalism.',
-    synopsis: 'A high-impact advertisement series starring acclaimed actor Pankaj Tripathi, capturing authentic Indian nuances with subtle humor and profound observational truth.',
+    logline: '“Sach, Kareeb Se Dikhta Hai” — Grounded commercial campaign featuring Pankaj Tripathi.',
+    synopsis: 'Dainik Bhaskar commercial campaign featuring Pankaj Tripathi highlighting observational realism and human connection.',
     heroImage: amusemacMedia.projects.dainikBhaskar,
+    videoUrl: amusemacVideos['dainik-bhaskar-pankaj-tripathi']?.url,
+    embedUrl: amusemacVideos['dainik-bhaskar-pankaj-tripathi']?.embedUrl,
+    hasVerifiedVideo: true,
     gallery: [
       {
         url: amusemacMedia.projects.dainikBhaskar,
-        caption: 'Pankaj Tripathi Ad Series — Framing the quiet realism of everyday Indian life',
+        caption: 'Dainik Bhaskar campaign frame featuring Pankaj Tripathi',
         aspect: 'cinema',
         type: 'still'
       },
       {
         url: amusemacMedia.services.brandCampaign,
-        caption: 'On-set lighting setup — Amusemac light crew at work',
+        caption: 'Lighting setup and crew on production set',
         aspect: 'portrait',
         type: 'lighting'
       }
@@ -70,9 +74,9 @@ export const projects: Project[] = [
       { role: 'Production House', name: 'Amusemac Studio' },
       { role: 'Cast', name: 'Pankaj Tripathi' },
       { role: 'Client', name: 'Dainik Bhaskar' },
-      { role: 'Format', name: 'TVC / Digital (30s & 10s Series)' }
+      { role: 'Source', name: 'amusemacstudio.in' }
     ],
-    disciplines: ['Advertisement', 'Video Production', 'Art Direction', 'Post Production'],
+    disciplines: ['Advertisement', 'Video Production', 'Art Direction'],
     featured: true,
     horizontalFeature: true
   },
@@ -83,12 +87,13 @@ export const projects: Project[] = [
     subtitle: 'Ab India Mein Har Koi Banega Umpire',
     category: 'Advertisement',
     client: 'Britannia Industries',
-    year: '2023',
     aspectRatio: '16:9 Commercial',
-    location: 'Mumbai',
-    logline: 'When everyday cricket passion turns any train seat or street kite into an official umpire decision.',
-    synopsis: 'A lively, humorous commercial campaign for Britannia 5050 capturing spontaneous cricket culture across India with energetic pacing and sharp comic timing.',
+    logline: 'Britannia 50-50 4th Umpire commercial spot (Kite & Train Seat).',
+    synopsis: 'Commercial campaign for Britannia 50-50 bringing everyday Indian humor and cricket passion to life.',
     heroImage: amusemacMedia.projects.britannia5050,
+    videoUrl: amusemacVideos['britannia-5050-4th-umpire']?.url,
+    embedUrl: amusemacVideos['britannia-5050-4th-umpire']?.embedUrl,
+    hasVerifiedVideo: true,
     gallery: [
       {
         url: amusemacMedia.projects.britannia5050,
@@ -101,7 +106,8 @@ export const projects: Project[] = [
     credits: [
       { role: 'Studio', name: 'Amusemac Studio' },
       { role: 'Client', name: 'Britannia Industries' },
-      { role: 'Campaign', name: '50-50 4th Umpire (Kite & Train Seat)' }
+      { role: 'Campaign', name: '50-50 4th Umpire' },
+      { role: 'Source', name: 'amusemacstudio.in' }
     ],
     disciplines: ['Advertisement', 'Production Design', 'Direction'],
     featured: true,
@@ -111,19 +117,19 @@ export const projects: Project[] = [
     id: '03',
     slug: 'god-vulture-and-human',
     title: 'GOD VULTURE AND HUMAN',
-    subtitle: 'The Unsung Heroes of Organ Transplantation (2023)',
+    subtitle: 'Dedicated to Organ Transplant Coordinators (2023)',
     category: 'Documentaries',
-    year: '2023',
     aspectRatio: '16:9 Documentary',
-    duration: 'Documentary Feature',
-    location: 'India',
-    logline: 'Dedicated to the tireless efforts of Organ Transplant Coordinators dealing with the intensities of life, death, and human grace.',
-    synopsis: 'The film explores the profound subject of organ donation through the lens of 4 transplant coordinators. Moving through hospitals and grieving families, it humanizes those who bridge the fragile boundary between mortality and second chances.',
+    logline: 'God Vulture and Human — Awarded Best Documentary of 2023 at National Film Awards.',
+    synopsis: 'A documentary exploring organ donation and the emotional realities navigated by transplant coordinators in India.',
     heroImage: amusemacMedia.projects.documentaries,
+    videoUrl: amusemacVideos['god-vulture-and-human']?.url,
+    embedUrl: amusemacVideos['god-vulture-and-human']?.embedUrl,
+    hasVerifiedVideo: true,
     gallery: [
       {
         url: amusemacMedia.projects.documentaries,
-        caption: 'Documentary production frame — capturing quiet human resilience',
+        caption: 'God Vulture and Human — Documentary frame',
         aspect: 'cinema',
         type: 'still'
       }
@@ -131,8 +137,9 @@ export const projects: Project[] = [
     palette: ['#1C241D', '#3F4E3A', '#8F4832', '#D9CDBC', '#D89B37'],
     credits: [
       { role: 'Production', name: 'Amusemac Studio' },
-      { role: 'Genre', name: 'Social & Medical Documentary' },
-      { role: 'Theme', name: 'Organ Donation & Human Resilience' }
+      { role: 'Recognition', name: 'National Film Awards — Best Documentary (2023)' },
+      { role: 'Theme', name: 'Organ Donation & Healthcare Coordinators' },
+      { role: 'Source', name: 'amusemacstudio.in' }
     ],
     disciplines: ['Documentaries', 'Sync Sound Recording', 'Editing'],
     featured: true,
@@ -144,13 +151,14 @@ export const projects: Project[] = [
     title: 'TATA SALT',
     subtitle: 'Har Narangi Pack Tata Namak Nahi Hota',
     category: 'Advertisement',
-    client: 'Tata Consumer Products',
-    year: '2023',
+    client: 'Tata Salt',
     aspectRatio: '16:9 Commercial',
-    location: 'Mumbai',
-    logline: 'Countering look-alike counterfeit brands with sharp Kirana and Mujrim narrative sketches.',
-    synopsis: 'A widely recognized television and digital commercial reinforcing consumer trust and authentic packaging awareness for India’s most trusted salt brand.',
+    logline: 'Namak ka har narangi pack Tata Namak nahi hota! Sirf asli Tata Namak apnaiye.',
+    synopsis: 'Tata Salt television and digital commercial campaign reinforcing consumer awareness for genuine packaging.',
     heroImage: amusemacMedia.projects.tataSalt,
+    videoUrl: amusemacVideos['tata-salt-har-narangi-pack']?.url,
+    embedUrl: amusemacVideos['tata-salt-har-narangi-pack']?.embedUrl,
+    hasVerifiedVideo: true,
     gallery: [
       {
         url: amusemacMedia.projects.tataSalt,
@@ -162,7 +170,8 @@ export const projects: Project[] = [
     palette: ['#E67E22', '#2980B9', '#121210', '#F3EDE2', '#D89B37'],
     credits: [
       { role: 'Brand', name: 'Tata Salt' },
-      { role: 'Production Team', name: 'Amusemac Studio' }
+      { role: 'Production', name: 'Amusemac Studio' },
+      { role: 'Source', name: 'amusemacstudio.in' }
     ],
     disciplines: ['Advertisement', 'Set Design & Art Direction', 'Video Production'],
     featured: true,
@@ -171,20 +180,21 @@ export const projects: Project[] = [
   {
     id: '05',
     slug: 'yadav-measurement-corporate',
-    title: 'YADAV MEASUREMENT',
-    subtitle: 'Behind The Scenes & Corporate Brand Narrative',
+    title: 'YADAV MEASUREMENT & MOBILAB',
+    subtitle: 'Corporate Film // Yadav Measurement Pvt. Ltd',
     category: 'Corporate Films',
-    client: 'Yadav Measurement Pvt. Ltd / MobiLab',
-    year: '2023',
+    client: 'Yadav Measurement Pvt. Ltd',
     aspectRatio: '16:9 Corporate',
-    location: 'Yari Road, Mumbai',
-    logline: 'Turning industrial precision and boardroom visions into screen-worthy cinematic narratives.',
-    synopsis: 'From pre-production brainstorms to on-set execution, this corporate film and Mobilab brand story captures the passion and technical mastery of Yadav Measurement.',
+    logline: 'Watch how Amusemac Studio turns concepts into captivating visuals for MobiLab by Yadav Measurement.',
+    synopsis: 'Step behind the curtains with Amusemac Studio as we capture the creativity and craft that goes into making a corporate film for Yadav Measurement Pvt. Ltd.',
     heroImage: amusemacMedia.projects.yadavMeasurement,
+    videoUrl: amusemacVideos['yadav-measurement-corporate-film']?.url,
+    embedUrl: amusemacVideos['yadav-measurement-corporate-film']?.embedUrl,
+    hasVerifiedVideo: true,
     gallery: [
       {
         url: amusemacMedia.projects.yadavMeasurement,
-        caption: 'Yadav Measurement corporate film on-location production',
+        caption: 'Yadav Measurement & MobiLab corporate production frame',
         aspect: 'cinema',
         type: 'set'
       }
@@ -192,11 +202,11 @@ export const projects: Project[] = [
     palette: ['#121210', '#5A5B5E', '#D89B37', '#F3EDE2', '#3D4F5D'],
     credits: [
       { role: 'Client', name: 'Yadav Measurement Pvt. Ltd' },
-      { role: 'Shot By', name: 'Amusemac Studio Team' },
       { role: 'Directed By', name: 'Sreyansha Jain' },
       { role: 'Executive Producer', name: 'Kapil Hanwat' },
       { role: 'Producer', name: 'Kuldeep Jatwa' },
-      { role: 'Creative Director', name: 'Kalpita Mandrekar' }
+      { role: 'Creative Director', name: 'Kalpita Mandrekar' },
+      { role: 'Source', name: 'amusemacstudio.in' }
     ],
     disciplines: ['Corporate Films', 'Direction', 'Production'],
     featured: true,
@@ -204,17 +214,50 @@ export const projects: Project[] = [
   },
   {
     id: '06',
+    slug: 'uppercase-akasa-air',
+    title: 'UPPERCASE × AKASA AIR',
+    subtitle: 'Sustainable Cabin Gear for Crew',
+    category: 'Corporate Films',
+    client: 'uppercase / Akasa Air',
+    aspectRatio: '16:9 Commercial & Corporate',
+    logline: 'uppercase partnered with Akasa Air to create custom-designed, eco-friendly cabin luggage.',
+    synopsis: 'Crafted using RCS-certified recycled materials and developed in close collaboration with Akasa’s in-flight crew.',
+    heroImage: amusemacMedia.services.clothAndProductionDesign,
+    videoUrl: amusemacVideos['uppercase-akasa-air']?.url,
+    embedUrl: amusemacVideos['uppercase-akasa-air']?.embedUrl,
+    hasVerifiedVideo: true,
+    gallery: [
+      {
+        url: amusemacMedia.services.clothAndProductionDesign,
+        caption: 'Sustainable textile and material curation for uppercase × Akasa Air',
+        aspect: 'cinema',
+        type: 'still'
+      }
+    ],
+    palette: ['#FF6B35', '#004E89', '#1A1A1A', '#F7F7F7', '#D89B37'],
+    credits: [
+      { role: 'Brand Partners', name: 'uppercase & Akasa Air' },
+      { role: 'Production', name: 'Amusemac Studio' },
+      { role: 'Source', name: 'amusemacstudio.in' }
+    ],
+    disciplines: ['Corporate Films', 'Production Design', 'Branding'],
+    featured: true,
+    horizontalFeature: true
+  },
+  {
+    id: '07',
     slug: 'pataa-mad-over-address',
-    title: 'PATAA APP CAMPAIGN',
+    title: 'PATAA APP',
     subtitle: 'Mad Over Address // Address Made Simple',
     category: 'Advertisement',
     client: 'Pataa Navigation',
-    year: '2023',
-    aspectRatio: '16:9 TVC',
-    location: 'Indore & Mumbai',
-    logline: '“Address By Paanwala”, “Baraat In A Funeral”, and “North Meets South” — solving India’s complex address navigation through irreverent storytelling.',
-    synopsis: 'A hilarious, culturally sharp ad campaign highlighting the chaos of finding addresses in Indian cities and how digital geocoding solves it.',
+    aspectRatio: '16:9 Commercial',
+    logline: 'Explaining your long and complex address made easy with Pataa.',
+    synopsis: 'Ad series for Pataa navigation featuring “Address By Paanwala”, “Baraat In A Funeral”, and “North Meets South”.',
     heroImage: amusemacMedia.projects.pataaApp,
+    videoUrl: amusemacVideos['pataa-app-mad-over-address']?.url,
+    embedUrl: amusemacVideos['pataa-app-mad-over-address']?.embedUrl,
+    hasVerifiedVideo: true,
     gallery: [
       {
         url: amusemacMedia.projects.pataaApp,
@@ -227,25 +270,128 @@ export const projects: Project[] = [
     credits: [
       { role: 'Client', name: 'Pataa Navigation' },
       { role: 'Production', name: 'Amusemac Studio' },
-      { role: 'Format', name: 'Digital Ad Campaign Series' }
+      { role: 'Campaign', name: 'Mad Over Address' },
+      { role: 'Source', name: 'amusemacstudio.in' }
     ],
     disciplines: ['Advertisement', 'Creative Direction', 'Video Production'],
     featured: true,
     horizontalFeature: true
   },
   {
-    id: '07',
+    id: '08',
+    slug: 'apml-asli-nakli',
+    title: 'AGARWAL PACKERS AND MOVERS (APML)',
+    subtitle: 'Asli Nakli // StoreKar Campaign',
+    category: 'Advertisement',
+    client: 'Agarwal Packers and Movers Ltd',
+    aspectRatio: '16:9 Commercial',
+    logline: 'APML Asli Nakli & StoreKar self-storage commercial series.',
+    synopsis: 'Commercials created for Agarwal Packers and Movers Ltd emphasizing authentic moving services and StoreKar storage.',
+    heroImage: amusemacMedia.projects.apmlAsliNakli,
+    videoUrl: amusemacVideos['apml-asli-nakli']?.url,
+    embedUrl: amusemacVideos['apml-asli-nakli']?.embedUrl,
+    hasVerifiedVideo: true,
+    gallery: [
+      {
+        url: amusemacMedia.projects.apmlAsliNakli,
+        caption: 'APML Asli Nakli commercial still',
+        aspect: 'cinema',
+        type: 'still'
+      }
+    ],
+    palette: ['#C0392B', '#2C3E50', '#F3EDE2', '#D89B37', '#121210'],
+    credits: [
+      { role: 'Client', name: 'Agarwal Packers and Movers Ltd' },
+      { role: 'Director', name: 'Deep Vyas' },
+      { role: 'DOP', name: 'Anurag Solanki' },
+      { role: 'Production Designer', name: 'Rinku' },
+      { role: 'Production House', name: 'Useful Garbage Creations / Amusemac Studio' },
+      { role: 'Source', name: 'amusemacstudio.in' }
+    ],
+    disciplines: ['Advertisement', 'Production Design', 'Cinematography'],
+    featured: false,
+    horizontalFeature: true
+  },
+  {
+    id: '09',
+    slug: 'axis-mutual-fund-sip',
+    title: 'AXIS MUTUAL FUND',
+    subtitle: '#SIPNow // #InvestEasy Campaign',
+    category: 'Advertisement',
+    client: 'Axis Mutual Fund',
+    aspectRatio: '16:9 Commercial',
+    logline: 'Should you start your SIP when markets are down? Axis MF #SIPNow.',
+    synopsis: 'Axis Mutual Fund commercial campaign explaining index funds and disciplined SIP planning for multiple goals.',
+    heroImage: amusemacMedia.projects.axisMutualFund,
+    videoUrl: amusemacVideos['axis-mutual-fund-sip']?.url,
+    embedUrl: amusemacVideos['axis-mutual-fund-sip']?.embedUrl,
+    hasVerifiedVideo: true,
+    gallery: [
+      {
+        url: amusemacMedia.projects.axisMutualFund,
+        caption: 'Axis MF — Multiple Goals? Multiple SIPs campaign still',
+        aspect: 'cinema',
+        type: 'still'
+      }
+    ],
+    palette: ['#97144D', '#121210', '#F3EDE2', '#ED1C24', '#D89B37'],
+    credits: [
+      { role: 'Client', name: 'Axis Mutual Fund' },
+      { role: 'Production', name: 'Amusemac Studio' },
+      { role: 'Source', name: 'amusemacstudio.in' }
+    ],
+    disciplines: ['Advertisement', 'Video Production'],
+    featured: false,
+    horizontalFeature: true
+  },
+  {
+    id: '10',
+    slug: 'never-kiss-your-best-friend-s2',
+    title: 'NEVER KISS YOUR BEST FRIEND S2',
+    subtitle: 'ZEE5 Original Series',
+    category: 'Film & Webseries',
+    client: 'ZEE5',
+    aspectRatio: '16:9 Webseries',
+    logline: 'Never Kiss Your Best Friend S2 Official Trailer | A ZEE5 Original Webseries.',
+    synopsis: 'Tanie and Sumer reunite coincidentally after years of separation as they end up working together in London.',
+    heroImage: amusemacMedia.projects.filmAndWebseries,
+    videoUrl: amusemacVideos['never-kiss-your-best-friend-s2']?.url,
+    embedUrl: amusemacVideos['never-kiss-your-best-friend-s2']?.embedUrl,
+    hasVerifiedVideo: true,
+    gallery: [
+      {
+        url: amusemacMedia.projects.filmAndWebseries,
+        caption: 'Never Kiss Your Best Friend S2 — Project keyframe',
+        aspect: 'cinema',
+        type: 'still'
+      }
+    ],
+    palette: ['#E74C3C', '#2C3E50', '#F8F5EE', '#D89B37', '#121210'],
+    credits: [
+      { role: 'Platform', name: 'ZEE5' },
+      { role: 'Director', name: 'Harsh Dedhia' },
+      { role: 'Star Cast', name: 'Anya Singh, Nakuul Mehta, Karan Wahi, Sarah Jane Dias' },
+      { role: 'Production Synergy', name: 'Amusemac Studio Team' },
+      { role: 'Source', name: 'amusemacstudio.in' }
+    ],
+    disciplines: ['Film & Webseries', 'Production Design', 'Art Direction'],
+    featured: false,
+    horizontalFeature: true
+  },
+  {
+    id: '11',
     slug: 'streetorigins-energy',
-    title: 'STREETORIGINS AD',
-    subtitle: 'Morgue & Unapologetic Energy',
+    title: 'STREETORIGINS',
+    subtitle: 'Streetwear & Creative Campaign',
     category: 'Advertisement',
     client: 'StreetOrigins',
-    year: '2023',
-    aspectRatio: '16:9 Commercial',
-    location: 'Mumbai',
-    logline: 'High-octane urban energy and unapologetic visual attitude.',
-    synopsis: 'An electric, raw commercial film created for StreetOrigins celebrating youth streetwear, music, and street authenticity.',
+    aspectRatio: '16:9 Visual',
+    logline: 'Visual creative campaign for StreetOrigins.',
+    synopsis: 'Creative film and visual series featured on Amusemac Studio.',
     heroImage: amusemacMedia.projects.streetOrigins,
+    videoUrl: undefined,
+    embedUrl: undefined,
+    hasVerifiedVideo: false,
     gallery: [
       {
         url: amusemacMedia.projects.streetOrigins,
@@ -257,39 +403,10 @@ export const projects: Project[] = [
     palette: ['#FF0055', '#121210', '#F8F5EE', '#7F8C8D', '#D89B37'],
     credits: [
       { role: 'Client', name: 'StreetOrigins' },
-      { role: 'Production', name: 'Amusemac Studio' }
+      { role: 'Production House', name: 'Amusemac Studio' },
+      { role: 'Source', name: 'amusemacstudio.in' }
     ],
-    disciplines: ['Advertisement', 'Creative Direction', 'Visuals'],
-    featured: false,
-    horizontalFeature: true
-  },
-  {
-    id: '08',
-    slug: 'axis-mutual-fund-sip',
-    title: 'AXIS MUTUAL FUND',
-    subtitle: 'Plan Smart with Axis MF // #InvestEasy #SIPNow',
-    category: 'Advertisement',
-    client: 'Axis Mutual Fund',
-    year: '2023',
-    aspectRatio: '16:9 Commercial',
-    location: 'Mumbai',
-    logline: 'Multiple Goals? Multiple SIPs — Making financial wisdom approachable through clean storytelling.',
-    synopsis: 'A digital and commercial campaign clarifying micro-investing and index funds for modern Indian investors.',
-    heroImage: amusemacMedia.projects.axisMutualFund,
-    gallery: [
-      {
-        url: amusemacMedia.projects.axisMutualFund,
-        caption: 'Axis MF — Multiple Goals? Multiple SIPs campaign',
-        aspect: 'cinema',
-        type: 'still'
-      }
-    ],
-    palette: ['#97144D', '#121210', '#F3EDE2', '#ED1C24', '#D89B37'],
-    credits: [
-      { role: 'Client', name: 'Axis Mutual Fund' },
-      { role: 'Production', name: 'Amusemac Studio' }
-    ],
-    disciplines: ['Advertisement', 'Video Production'],
+    disciplines: ['Advertisement', 'Creative Direction'],
     featured: false,
     horizontalFeature: true
   }
