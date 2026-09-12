@@ -1,4 +1,4 @@
-﻿export interface ProjectCredit {
+export interface ProjectCredit {
   role: string;
   name: string;
 }
@@ -8,13 +8,12 @@ export interface Project {
   slug: string;
   title: string;
   subtitle: string;
-  category: 'Feature Film' | 'Short Film' | 'Documentary' | 'Commercial' | 'Music Video' | 'Production Design';
-  year: string;
-  aspectRatio: string;
-  duration?: string;
+  category: 'Advertisement' | 'Corporate Films' | 'Documentaries' | 'Film & Webseries' | 'Music Videos' | 'Short Films';
   client?: string;
-  location: string;
-  status?: string;
+  year?: string;
+  aspectRatio?: string;
+  duration?: string;
+  location?: string;
   logline: string;
   synopsis: string;
   heroImage: string;
@@ -39,310 +38,263 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: '01',
-    slug: 'bandhishein',
-    title: 'BANDHISHEIN',
-    subtitle: 'The Music That Echoes Behind Stone Walls',
-    category: 'Feature Film',
-    year: '2024',
-    aspectRatio: '2.39:1 Anamorphic',
-    duration: '118 MIN',
-    location: 'Rajasthan / Mehboob Studios Mumbai',
-    status: 'Festival Circuit',
-    logline: 'In the twilight of 19th-century royal Rajasthan, a rebellious classical vocalist confronts the rigid orthodoxy of her court.',
-    synopsis: 'Bandhishein is a sweeping period drama capturing the tension between tradition and self-emancipation. Amusemac Studio executed end-to-end production design, set construction across 4 soundstages in Mumbai, and principal photography in the sand dunes of Khuri.',
+    slug: 'dainik-bhaskar-pankaj-tripathi',
+    title: 'DAINIK BHASKAR',
+    subtitle: 'सच, करीब से दिखता है (Featuring Pankaj Tripathi)',
+    category: 'Advertisement',
+    client: 'Dainik Bhaskar',
+    year: '2023',
+    aspectRatio: '16:9 Commercial',
+    location: 'Mumbai / North India',
+    logline: '“Sach, Kareeb Se Dikhta Hai” — A grounded, human commercial campaign bringing out the gritty truth of real journalism.',
+    synopsis: 'A high-impact 3-part advertisement series starring acclaimed actor Pankaj Tripathi, capturing authentic Indian nuances with subtle humor and profound observational truth.',
     heroImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&auto=format&fit=crop',
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1400&auto=format&fit=crop',
-        caption: 'The Royal Court Soundstage — 1:1 scale courtyard build at Film City Mumbai',
-        type: 'set',
-        aspect: 'cinema'
+        url: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1400&auto=format&fit=crop',
+        caption: 'Pankaj Tripathi Ad Series — Framing the quiet realism of everyday Indian life',
+        aspect: 'cinema',
+        type: 'still'
       },
       {
         url: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1200&auto=format&fit=crop',
-        caption: 'Atmospheric natural oil-lamp lighting studies for night sequence',
-        type: 'lighting',
-        aspect: 'portrait'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Production design elevation blueprint: Jharokha window lattice carpentry',
-        type: 'sketch',
-        aspect: 'standard'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Principal photography — Anamorphic lens 40mm T2.0 at magic hour',
-        type: 'still',
-        aspect: 'cinema'
+        caption: 'Location lighting calibration for natural village tea-stall scene',
+        aspect: 'portrait',
+        type: 'lighting'
       }
     ],
-    palette: ['#0D0D0C', '#8C4A32', '#D89B37', '#E2D3B8', '#384149'],
+    palette: ['#121210', '#D89B37', '#8F4832', '#F3EDE2', '#3D4F5D'],
     credits: [
       { role: 'Production House', name: 'Amusemac Studio' },
-      { role: 'Director', name: 'Kabir Varma' },
-      { role: 'Production Designer', name: 'Amusemac Art Dept / S. Kulkarni' },
-      { role: 'Cinematographer', name: 'R. Sen Gupta (ISC)' },
-      { role: 'Colorist', name: 'N. Fernandes' }
+      { role: 'Cast', name: 'Pankaj Tripathi' },
+      { role: 'Client', name: 'Dainik Bhaskar' },
+      { role: 'Format', name: 'TVC / Digital (30s & 10s Series)' }
     ],
-    disciplines: ['Production Design', 'Art Direction', 'Film Production', 'Color Grading'],
+    disciplines: ['Advertisement', 'Video Production', 'Art Direction', 'Post Production'],
     featured: true,
-    horizontalFeature: true,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-silhouette-of-a-man-in-front-of-a-fire-41557-large.mp4',
-    quote: {
-      text: 'Amusemac didn’t just build a set; they constructed an acoustic and tactile world where every stone breathed history.',
-      author: 'Kabir Varma, Director'
-    }
+    horizontalFeature: true
   },
   {
     id: '02',
-    slug: 'mirage',
-    title: 'MIRAGE',
-    subtitle: 'A Neo-Noir Psychological Odyssey',
-    category: 'Short Film',
-    year: '2024',
-    aspectRatio: '1.33:1 Academy',
-    duration: '24 MIN',
-    location: 'South Mumbai Docks & Byculla',
-    status: 'Official Selection — Clermont-Ferrand',
-    logline: 'An insomniac radio archivist in midnight Mumbai discovers encrypted voice transmissions buried in obsolete magnetic tapes.',
-    synopsis: 'Shot entirely on vintage 35mm film in South Mumbai during the monsoon. Mirage investigates analog obsolescence, memory degradation, and nocturnal urban isolation.',
-    heroImage: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=1920&auto=format&fit=crop',
+    slug: 'britannia-5050-4th-umpire',
+    title: 'BRITANNIA 50-50',
+    subtitle: 'Ab India Mein Har Koi Banega Umpire',
+    category: 'Advertisement',
+    client: 'Britannia Industries',
+    year: '2023',
+    aspectRatio: '16:9 Commercial',
+    location: 'Mumbai',
+    logline: 'When everyday cricket passion turns any train seat or street kite into an official umpire decision.',
+    synopsis: 'A lively, humorous commercial campaign for Britannia 5050 capturing spontaneous cricket culture across India with energetic pacing and sharp comic timing.',
+    heroImage: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=1920&auto=format&fit=crop',
     gallery: [
       {
         url: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1400&auto=format&fit=crop',
-        caption: 'The Tape Archive — Soundstage custom console with authentic 1974 Studer decks',
-        type: 'set',
-        aspect: 'academy'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Rain rig setup outside Ballard Estate heritage portico',
-        type: 'still',
-        aspect: 'cinema'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop',
-        caption: '35mm optical grain test and monochromatic density curve',
-        type: 'lighting',
-        aspect: 'portrait'
+        caption: 'Train Seat Umpire Setup — Practical Mumbai local train interior recreation',
+        aspect: 'cinema',
+        type: 'set'
       }
     ],
-    palette: ['#080808', '#202B38', '#5E7083', '#C9D4DF', '#A45D3B'],
+    palette: ['#0A0F14', '#D89B37', '#E74C3C', '#F8F5EE', '#2C3E50'],
     credits: [
-      { role: 'Director & Writer', name: 'Devashish P.' },
-      { role: 'Creative Direction', name: 'Amusemac Studio' },
-      { role: 'Sound Design', name: 'A. Merchant' },
-      { role: 'Lead Cast', name: 'Adil Hussain, Tillotama Shome' }
+      { role: 'Studio', name: 'Amusemac Studio' },
+      { role: 'Client', name: 'Britannia Industries' },
+      { role: 'Campaign', name: '50-50 4th Umpire (Kite & Train Seat)' }
     ],
-    disciplines: ['Creative Direction', 'Film Production', 'Sound Design', 'Post Production'],
+    disciplines: ['Advertisement', 'Production Design', 'Direction'],
     featured: true,
-    horizontalFeature: true,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-car-driving-through-the-city-at-night-41559-large.mp4',
-    quote: {
-      text: 'A claustrophobic masterpiece of atmospheric dread and tactile sound design.',
-      author: 'Film Companion'
-    }
+    horizontalFeature: true
   },
   {
     id: '03',
-    slug: 'nettle-nagaland',
-    title: 'NETTLE / NAGALAND',
-    subtitle: 'Wild Fiber, Sacred Stitches',
-    category: 'Documentary',
-    year: '2024',
-    aspectRatio: '16:9 Document',
-    duration: '46 MIN',
-    location: 'Khonoma & Dzülke, Nagaland',
-    status: 'Doc Edge Official Selection',
-    logline: 'High in the mist-shrouded hills of Nagaland, three Angami elders harvest stinging nettles to weave textiles that have resisted five centuries of change.',
-    synopsis: 'A lyrical, observational documentary shot with minimal crew over 45 days. We embedded in Dzülke village, capturing the tactile journey of harvesting raw stinging nettle, natural dyeing with oak bark, and the sacred rhythmic loom.',
+    slug: 'god-vulture-and-human',
+    title: 'GOD VULTURE AND HUMAN',
+    subtitle: 'The Unsung Heroes of Organ Transplantation (2023)',
+    category: 'Documentaries',
+    year: '2023',
+    aspectRatio: '16:9 Documentary',
+    duration: 'Documentary Feature',
+    location: 'India',
+    logline: 'Dedicated to the tireless efforts of Organ Transplant Coordinators dealing with the intensities of life, death, and human grace.',
+    synopsis: 'The film explores the profound subject of organ donation through the lens of 4 transplant coordinators. Moving through hospitals and grieving families, it humanizes those who bridge the fragile boundary between mortality and second chances.',
     heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1920&auto=format&fit=crop',
     gallery: [
       {
         url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1400&auto=format&fit=crop',
-        caption: 'The Misty Ridge — Dawn harvesting at 2,400 meters altitude',
-        type: 'still',
-        aspect: 'cinema'
+        caption: 'Observational hospital corridor framing — capturing quiet human resilience',
+        aspect: 'cinema',
+        type: 'still'
       },
       {
         url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop',
-        caption: 'Hands of Angami master weaver Sano Nakhro',
-        type: 'still',
-        aspect: 'portrait'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Location sound recording in dense rainforest canopies',
-        type: 'lighting',
-        aspect: 'standard'
+        caption: 'Intimate interview lighting for the 4 transplant coordinators',
+        aspect: 'portrait',
+        type: 'lighting'
       }
     ],
-    palette: ['#1C241D', '#3F4E3A', '#8B7355', '#D9CDBC', '#C49746'],
+    palette: ['#1C241D', '#3F4E3A', '#8F4832', '#D9CDBC', '#D89B37'],
     credits: [
-      { role: 'Directors', name: 'Zoya Akhtar (Assoc.) & Karan J.' },
-      { role: 'Production & Field Ops', name: 'Amusemac Studio' },
-      { role: 'Field Recordist', name: 'T. Jamir' },
-      { role: 'Colorist', name: 'Amusemac Labs' }
+      { role: 'Production', name: 'Amusemac Studio' },
+      { role: 'Genre', name: 'Social & Medical Documentary' },
+      { role: 'Theme', name: 'Organ Donation & Human Resilience' }
     ],
-    disciplines: ['Documentaries', 'Visual Development', 'Post Production'],
+    disciplines: ['Documentaries', 'Sync Sound Recording', 'Editing'],
     featured: true,
-    horizontalFeature: true,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-fog-over-the-mountains-41551-large.mp4',
-    quote: {
-      text: 'Cinema that listens before it shoots. A triumph of observational sensitivity.',
-      author: 'Kolkata International DocFest'
-    }
+    horizontalFeature: true
   },
   {
     id: '04',
-    slug: 'the-monsoon-project',
-    title: 'THE MONSOON PROJECT',
-    subtitle: 'When The Sky Falls On Bombay',
-    category: 'Commercial',
-    year: '2024',
-    aspectRatio: '2.39:1 Anamorphic',
-    client: 'Royal Enfield / Outdoor Heritage',
-    location: 'Western Ghats & Mumbai Suburbs',
-    logline: 'A cinematic tribute to the raw, untamed fury and poetry of the Indian monsoon through the eyes of midnight riders.',
-    synopsis: 'A high-energy, sensory commercial film commissioned to capture the spirit of riding through unrelenting torrential rains. Amusemac deployed waterproof camera rigs, underwater high-speed lenses, and bespoke lighting flares.',
-    heroImage: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=1920&auto=format&fit=crop',
+    slug: 'testimony-of-ana',
+    title: 'TESTIMONY OF ANA',
+    subtitle: 'Myths, Patriarchy & The Scars Left Behind',
+    category: 'Documentaries',
+    year: '2022',
+    aspectRatio: 'Academy / 16:9',
+    location: 'Rural India',
+    logline: 'An award-winning documentary taking us into the life of Ana, an elderly woman navigating the intersection of centuries-old superstition and cultural violence.',
+    synopsis: 'In a remote Indian village, centuries-old myths about women’s bodies and power still cast long shadows. Testimony of Ana is a haunting exploration of superstition, patriarchy, and the scars—both visible and invisible—that they leave behind.',
+    heroImage: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=1920&auto=format&fit=crop',
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1400&auto=format&fit=crop',
-        caption: 'High-speed 500fps water droplet collision with motorcycle engine fin',
-        type: 'still',
-        aspect: 'cinema'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Custom rigged chase car through Malshej Ghat passes',
-        type: 'set',
-        aspect: 'standard'
+        url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1400&auto=format&fit=crop',
+        caption: 'Monochromatic portraiture and shadow studies in rural village courtyards',
+        aspect: 'cinema',
+        type: 'still'
       }
     ],
-    palette: ['#0A0F14', '#2C3E50', '#85929E', '#EAECEE', '#E67E22'],
+    palette: ['#080808', '#202B38', '#8F4832', '#C9D4DF', '#D89B37'],
     credits: [
-      { role: 'Agency / Studio', name: 'Amusemac Studio' },
-      { role: 'Director', name: 'Vikramjit Roy' },
-      { role: 'Creative Director', name: 'Amusemac' },
-      { role: 'VFX & Clean-up', name: 'Amusemac Post' }
+      { role: 'Documentary Studio', name: 'Amusemac Studio' },
+      { role: 'Subject', name: 'Ana & Village Elders' },
+      { role: 'Recognition', name: 'Award-Winning Documentary' }
     ],
-    disciplines: ['Advertising Films', 'Creative Direction', 'Post Production'],
+    disciplines: ['Documentaries', 'Visual Storytelling', 'Cinematography'],
     featured: true,
     horizontalFeature: true
   },
   {
     id: '05',
-    slug: 'gully-dreams-raftaar',
-    title: 'GULLY DREAMS',
-    subtitle: 'Kinetic Street Realism & Neon Verse',
-    category: 'Music Video',
+    slug: 'yadav-measurement-corporate',
+    title: 'YADAV MEASUREMENT',
+    subtitle: 'Behind The Scenes & Corporate Brand Narrative',
+    category: 'Corporate Films',
+    client: 'Yadav Measurement Pvt. Ltd / MobiLab',
     year: '2023',
-    aspectRatio: '16:9 Raw',
-    client: 'Mass Appeal India / Def Jam',
-    location: 'Dharavi & Mazgaon Docks, Mumbai',
-    logline: 'A 4-minute hyper-stylized continuous one-take illusion across rooftops, scrap yards, and neon-lit chai stalls.',
-    synopsis: 'Combining handheld Ronin 4D tracking, custom neon lighting installations, and seamless invisible cuts, Gully Dreams redefines the visual grammar of Indian hip-hop cinema.',
-    heroImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1920&auto=format&fit=crop',
+    aspectRatio: '16:9 Corporate',
+    location: 'Yari Road, Mumbai',
+    logline: 'Turning industrial precision and boardroom visions into screen-worthy cinematic narratives.',
+    synopsis: 'From pre-production brainstorms to on-set execution, this corporate film and Mobilab brand story captures the passion and technical mastery of Yadav Measurement.',
+    heroImage: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1920&auto=format&fit=crop',
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Production art: Custom neon signage and scrap-metal stage architecture',
-        type: 'sketch',
-        aspect: 'standard'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1400&auto=format&fit=crop',
-        caption: 'One-take wire-cam pass across the Mazgaon dry docks',
-        type: 'still',
-        aspect: 'cinema'
+        url: 'https://images.unsplash.com/photo-1541888946425-d0fbb186156a?q=80&w=1400&auto=format&fit=crop',
+        caption: 'MobiLab tech unit on-location shoot at Mumbai facility',
+        aspect: 'cinema',
+        type: 'set'
       }
     ],
-    palette: ['#07080D', '#D63031', '#0984E3', '#FDCB6E', '#DFE6E9'],
+    palette: ['#121210', '#5A5B5E', '#D89B37', '#F3EDE2', '#3D4F5D'],
     credits: [
-      { role: 'Direction & Art', name: 'Amusemac Studio' },
-      { role: 'DP', name: 'Manish Rawat' },
-      { role: 'Steadicam Operator', name: 'Sunil K.' }
+      { role: 'Client', name: 'Yadav Measurement Pvt. Ltd' },
+      { role: 'Shot By', name: 'Amusemac Studio Team' },
+      { role: 'Directed By', name: 'Sreyansha Jain' },
+      { role: 'Executive Producer', name: 'Kapil Hanwat' },
+      { role: 'Producer', name: 'Kuldeep Jatwa' },
+      { role: 'Creative Director', name: 'Kalpita Mandrekar' }
     ],
-    disciplines: ['Music Videos', 'Production Design', 'Art Direction'],
+    disciplines: ['Corporate Films', 'Direction', 'Production'],
     featured: true,
-    horizontalFeature: false
+    horizontalFeature: true
   },
   {
     id: '06',
-    slug: 'the-architects-memory',
-    title: 'THE ARCHITECT’S MEMORY',
-    subtitle: 'Brutalist Set Construction & Spatial Illusion',
-    category: 'Production Design',
+    slug: 'uppercase-x-akasa-air',
+    title: 'UPPERCASE × AKASA AIR',
+    subtitle: 'Smart, Sustainable Cabin Gear for the Crew',
+    category: 'Corporate Films',
+    client: 'uppercase / Akasa Air',
     year: '2023',
-    aspectRatio: '2.39:1 Anamorphic',
-    location: 'Studio Stage 3, Film City Mumbai',
-    logline: 'An ambitious full-scale interior and exterior build recreating a 1974 modernist Mumbai penthouse with operable sliding concrete louvers.',
-    synopsis: 'Amusemac Studio drafted over 120 architectural sheets and led a 60-person carpenter and scenic artist crew to construct this monolithic 4,500 sq.ft. environment within 18 days.',
-    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop',
+    aspectRatio: '16:9 Commercial & Corporate',
+    location: 'Mumbai Airport & Flight Deck',
+    logline: 'uppercase partners with Akasa Air to design custom eco-friendly cabin gear crafted with RCS-certified recycled materials.',
+    synopsis: 'Co-created with direct input from Akasa’s cabin crew, this brand film highlights sustainable utility, innovation, and Indian design craftsmanship.',
+    heroImage: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=1920&auto=format&fit=crop',
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Completed penthouse living space with distressed exposed concrete patina',
-        type: 'set',
-        aspect: 'cinema'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop',
-        caption: '1:20 scale timber architectural maquette built for camera sightlines',
-        type: 'sketch',
-        aspect: 'portrait'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1541888946425-d0fbb186156a?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Day 11 soundstage steel trussing and modular wall assembly',
-        type: 'set',
-        aspect: 'standard'
+        url: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1400&auto=format&fit=crop',
+        caption: 'Product ergonomics and sustainable material close-up framing',
+        aspect: 'cinema',
+        type: 'still'
       }
     ],
-    palette: ['#1E1F22', '#5A5B5E', '#9E9A93', '#D6CFC7', '#93583C'],
+    palette: ['#FF6B00', '#121210', '#F8F5EE', '#7F8C8D', '#D89B37'],
     credits: [
-      { role: 'Production Design Studio', name: 'Amusemac Studio' },
-      { role: 'Supervising Art Director', name: 'Amusemac Design Lab' },
-      { role: 'Lead Scenic Artist', name: 'R. Waghmare' },
-      { role: 'Set Decorator', name: 'Priya Sharma' }
+      { role: 'Brand Partners', name: 'uppercase & Akasa Air' },
+      { role: 'Production', name: 'Amusemac Studio' },
+      { role: 'Focus', name: 'Sustainable Design & Made in India' }
     ],
-    disciplines: ['Production Design', 'Art Direction', 'Visual Development'],
+    disciplines: ['Corporate Films', 'Advertisement', 'Branded Content'],
     featured: true,
-    horizontalFeature: true,
-    quote: {
-      text: 'The architecture felt alive. You forgot you were standing inside a warehouse in Goregaon.',
-      author: 'Architecture & Cinema Journal'
-    }
+    horizontalFeature: true
   },
   {
     id: '07',
-    slug: 'kaavla',
-    title: 'KAAVLA (THE CROW)',
-    subtitle: 'Coastal Konkan Folklore & Magical Realism',
-    category: 'Short Film',
+    slug: 'pataa-mad-over-address',
+    title: 'PATAA APP CAMPAIGN',
+    subtitle: 'Mad Over Address // Address Made Simple',
+    category: 'Advertisement',
+    client: 'Pataa Navigation',
     year: '2023',
-    aspectRatio: '2.39:1 Anamorphic',
-    duration: '18 MIN',
-    location: 'Vengurla, Konkan Coast',
-    logline: 'An aging lighthouse keeper begins receiving ominous brass keys carried across the Arabian Sea by a flock of crows.',
-    synopsis: 'A folklore mystery anchored by traditional coastal architecture, red laterite stone houses, and salt-weathered maritime props designed by Amusemac.',
-    heroImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop',
+    aspectRatio: '16:9 TVC',
+    location: 'Indore & Mumbai',
+    logline: '“Address By Paanwala”, “Baraat In A Funeral”, and “North Meets South” — solving India’s complex address navigation through irreverent storytelling.',
+    synopsis: 'A hilarious, culturally sharp ad campaign highlighting the chaos of finding addresses in Indian cities and how digital geocoding solves it.',
+    heroImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1920&auto=format&fit=crop',
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Lighthouse lantern room location build overlooking rocky surf',
-        type: 'still',
-        aspect: 'cinema'
+        url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1400&auto=format&fit=crop',
+        caption: 'Baraat in a Funeral scene — live comedic timing on location',
+        aspect: 'cinema',
+        type: 'still'
       }
     ],
-    palette: ['#0B131E', '#3D4F5D', '#9AA7B1', '#E3A857', '#6E2C1A'],
+    palette: ['#0984E3', '#00B894', '#D63031', '#121210', '#F8F5EE'],
     credits: [
-      { role: 'Studio', name: 'Amusemac Studio' },
-      { role: 'Director', name: 'Samir Joshi' }
+      { role: 'Client', name: 'Pataa Navigation' },
+      { role: 'Production', name: 'Amusemac Studio' },
+      { role: 'Format', name: 'Digital Ad Campaign Series' }
     ],
-    disciplines: ['Film Production', 'Production Design', 'Art Direction'],
+    disciplines: ['Advertisement', 'Creative Direction', 'Video Production'],
+    featured: false,
+    horizontalFeature: true
+  },
+  {
+    id: '08',
+    slug: 'tata-salt-har-narangi-pack',
+    title: 'TATA SALT',
+    subtitle: 'Har Narangi Pack Tata Namak Nahi Hota',
+    category: 'Advertisement',
+    client: 'Tata Consumer Products',
+    year: '2023',
+    aspectRatio: '16:9 Commercial',
+    location: 'Mumbai',
+    logline: 'Countering look-alike counterfeit brands with sharp Kirana and Mujrim narrative sketches.',
+    synopsis: 'A widely recognized television and digital commercial reinforcing consumer trust and authentic packaging awareness for India’s most trusted salt brand.',
+    heroImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1920&auto=format&fit=crop',
+    gallery: [
+      {
+        url: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1400&auto=format&fit=crop',
+        caption: 'Traditional Kirana store set dressing and lighting setup',
+        aspect: 'cinema',
+        type: 'set'
+      }
+    ],
+    palette: ['#E67E22', '#2980B9', '#121210', '#F3EDE2', '#D89B37'],
+    credits: [
+      { role: 'Brand', name: 'Tata Salt' },
+      { role: 'Production Team', name: 'Amusemac Studio' }
+    ],
+    disciplines: ['Advertisement', 'Set Design & Art Direction', 'Video Production'],
     featured: false,
     horizontalFeature: true
   }

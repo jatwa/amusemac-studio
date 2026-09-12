@@ -1,17 +1,17 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { projects, Project } from '@/data/projects';
 import { ProjectModal } from '@/components/ProjectModal';
-import { ArrowUpRight, Film, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { ArrowUpRight, Film, Sparkles } from 'lucide-react';
 import { soundEngine } from '@/lib/audio';
 
 export function FeaturedWorkSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [filter, setFilter] = useState<string>('ALL');
 
-  const categories = ['ALL', 'Feature Film', 'Short Film', 'Documentary', 'Commercial', 'Production Design'];
+  const categories = ['ALL', 'Advertisement', 'Corporate Films', 'Documentaries'];
 
   const filteredProjects = filter === 'ALL' 
     ? projects 
@@ -32,11 +32,14 @@ export function FeaturedWorkSection() {
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-xs font-mono-film text-[#D89B37]">
               <Film className="w-3.5 h-3.5" />
-              <span>[ 01 // SELECTED WORK ]</span>
+              <span>[ 01 // OUR CANVAS • PORTFOLIO ]</span>
             </div>
             <h2 className="text-4xl sm:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
-              FROM THE CANVAS<span className="text-[#D89B37]">.</span>
+              OUR CANVAS<span className="text-[#D89B37]">.</span>
             </h2>
+            <p className="text-sm sm:text-base font-editorial text-[#F4EFE6]/60">
+              “Stories that don’t just play — they linger.”
+            </p>
           </div>
 
           {/* Filter Pills */}
@@ -85,11 +88,11 @@ export function FeaturedWorkSection() {
                 {/* Floating Technical Badge */}
                 <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-3 text-xs font-mono-film text-[#F4EFE6] bg-black/60 backdrop-blur-md px-3 py-1.5 rounded border border-[#F4EFE6]/15">
                   <span className="w-2 h-2 rounded-full bg-[#D89B37] animate-pulse" />
-                  <span>FLAGSHIP // {filteredProjects[0].aspectRatio}</span>
+                  <span>FEATURED // {filteredProjects[0].category}</span>
                 </div>
 
                 <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 px-4 py-2 bg-[#D89B37] text-[#090908] rounded font-mono-film text-xs font-bold uppercase tracking-wider">
-                  <span>EXPLORE PRODUCTION</span>
+                  <span>EXPLORE PROJECT</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
@@ -106,8 +109,7 @@ export function FeaturedWorkSection() {
                 </div>
                 <div className="flex items-center gap-4 text-xs font-mono-film text-[#F4EFE6]/60">
                   <span className="px-2 py-0.5 rounded bg-[#F4EFE6]/10">{filteredProjects[0].category}</span>
-                  <span>{filteredProjects[0].year}</span>
-                  <span>{filteredProjects[0].location}</span>
+                  {filteredProjects[0].client && <span>CLIENT: {filteredProjects[0].client}</span>}
                 </div>
               </div>
             </div>
@@ -120,7 +122,7 @@ export function FeaturedWorkSection() {
               data-cursor-text="VIEW FILM"
               className="lg:col-span-7 group cursor-pointer space-y-4"
             >
-              <div className="relative w-full aspect-academy sm:aspect-cinema lg:aspect-[16/10] overflow-hidden rounded-xs border border-[#F4EFE6]/15 bg-[#18181A]">
+              <div className="relative w-full aspect-cinema lg:aspect-[16/10] overflow-hidden rounded-xs border border-[#F4EFE6]/15 bg-[#18181A]">
                 <Image
                   src={filteredProjects[1].heroImage}
                   alt={filteredProjects[1].title}
@@ -129,7 +131,7 @@ export function FeaturedWorkSection() {
                   sizes="(max-width: 1024px) 100vw, 60vw"
                 />
                 <div className="absolute top-4 left-4 text-[10px] font-mono-film bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded text-[#D89B37] border border-[#F4EFE6]/10">
-                  {filteredProjects[1].aspectRatio}
+                  {filteredProjects[1].category}
                 </div>
               </div>
 
@@ -139,17 +141,17 @@ export function FeaturedWorkSection() {
                     {filteredProjects[1].title}
                   </h3>
                   <p className="text-xs font-mono-film text-[#F4EFE6]/60">
-                    {filteredProjects[1].category} • {filteredProjects[1].year}
+                    {filteredProjects[1].subtitle}
                   </p>
                 </div>
                 <span className="text-xs font-mono-film text-[#D89B37] group-hover:translate-x-1 transition-transform">
-                  [ READ DOSSIER → ]
+                  [ VIEW DOSSIER → ]
                 </span>
               </div>
             </div>
           )}
 
-          {/* Project 3 (5 Cols Asymmetric Right - Tall Portrait/Square) */}
+          {/* Project 3 (5 Cols Asymmetric Right) */}
           {filteredProjects[2] && (
             <div 
               onClick={() => handleOpenProject(filteredProjects[2])}
@@ -175,7 +177,7 @@ export function FeaturedWorkSection() {
                     {filteredProjects[2].title}
                   </h3>
                   <p className="text-xs font-mono-film text-[#F4EFE6]/60">
-                    {filteredProjects[2].location} • {filteredProjects[2].year}
+                    {filteredProjects[2].subtitle}
                   </p>
                 </div>
                 <span className="text-xs font-mono-film text-[#D89B37] group-hover:translate-x-1 transition-transform">
@@ -216,47 +218,11 @@ export function FeaturedWorkSection() {
                   </p>
                 </div>
                 <span className="text-xs font-mono-film text-[#D89B37]">
-                  {proj.year}
+                  {proj.client || proj.year}
                 </span>
               </div>
             </div>
           ))}
-
-          {/* Project 6 (Full-bleed World Design Feature) */}
-          {filteredProjects[5] && (
-            <div 
-              onClick={() => handleOpenProject(filteredProjects[5])}
-              data-cursor-text="EXPLORE SET"
-              className="lg:col-span-12 group cursor-pointer space-y-4 pt-6"
-            >
-              <div className="relative w-full aspect-cinema overflow-hidden rounded-xs border border-[#F4EFE6]/15 bg-[#18181A]">
-                <Image
-                  src={filteredProjects[5].heroImage}
-                  alt={filteredProjects[5].title}
-                  fill
-                  className="object-cover film-image group-hover:scale-102 transition-transform duration-700"
-                  sizes="100vw"
-                />
-                <div className="absolute top-4 left-4 text-xs font-mono-film bg-[#8F4832] text-white px-3 py-1 rounded font-semibold">
-                  WORLD-BUILDING SHOWCASE // ARCHITECTURAL SOUNDSTAGE BUILD
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 border-b border-[#F4EFE6]/10 pb-4">
-                <div>
-                  <h3 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#F4EFE6] group-hover:text-[#D89B37] transition-colors">
-                    {filteredProjects[5].title}
-                  </h3>
-                  <p className="text-sm font-mono-film text-[#F4EFE6]/60">
-                    {filteredProjects[5].subtitle}
-                  </p>
-                </div>
-                <span className="text-xs font-mono-film text-[#D89B37]">
-                  [ INSPECT BLUEPRINTS & STILLS → ]
-                </span>
-              </div>
-            </div>
-          )}
 
         </div>
 

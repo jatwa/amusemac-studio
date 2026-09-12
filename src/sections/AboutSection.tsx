@@ -1,25 +1,25 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Image from 'next/image';
-import { Compass, Film, Flame, Award, Heart } from 'lucide-react';
+import { Film, Award, Heart, Sparkles } from 'lucide-react';
 
 export function AboutSection() {
   const pillars = [
     {
       num: '01',
-      title: 'OBSESSION OVER PRODUCTION',
-      text: 'We are filmmakers first. We do not look at cinema through the lens of client deliverables, but through the lens of cultural memory.'
+      title: 'OLD-SCHOOL STORYTELLING',
+      text: 'Ads, films, and stories built the old school way — craft, grit, and a little obsession. If it doesn’t stop the scroll or stir the soul, we’re not shipping it.'
     },
     {
       num: '02',
-      title: 'PHYSICAL CRAFT IN DIGITAL TIMES',
-      text: 'While others rely solely on virtual shortcuts, we build full-scale soundstage architecture, custom aged props, and shoot on authentic glass.'
+      title: 'DESIGN MEETS DETAIL',
+      text: 'Every frame we build balances art direction, detail, and emotion — because style only matters if it serves the story.'
     },
     {
       num: '03',
-      title: 'MUMBAI ROOTS, GLOBAL GRAMMAR',
-      text: 'Our stories emerge from the chaotic poetry of Mumbai and the distinct landscapes of India, crafted with world-class cinematic precision.'
+      title: 'MUMBAI ROOTS, NATIONWIDE IMPACT',
+      text: 'Based in Mumbai, Maharashtra, we collaborate with leading brands, startups, agencies, and independent filmmakers across India and internationally.'
     }
   ];
 
@@ -35,7 +35,7 @@ export function AboutSection() {
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-xs font-mono-film text-[#8F4832]">
               <Film className="w-3.5 h-3.5" />
-              <span>[ 07 // ABOUT AMUSEMAC ]</span>
+              <span>[ 07 // ABOUT AMUSEMAC STUDIO ]</span>
             </div>
             <h2 className="text-4xl sm:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none text-[#0D0D0C]">
               MAD ABOUT CREATION<span className="text-[#8F4832]">.</span>
@@ -43,7 +43,7 @@ export function AboutSection() {
           </div>
 
           <span className="text-xs font-mono-film text-[#66635B]">
-            FOUNDED BY FILMMAKERS // MUMBAI
+            MUMBAI-BASED PRODUCTION HOUSE
           </span>
         </div>
 
@@ -52,19 +52,19 @@ export function AboutSection() {
           
           <div className="lg:col-span-7 space-y-8">
             <p className="text-2xl sm:text-4xl font-editorial font-bold text-[#0D0D0C] leading-snug tracking-tight">
-              Amusemac Studio is a production house built around one simple obsession — cinema.
+              “Amusemac Studio is where stories come alive.”
             </p>
             
             <p className="text-base sm:text-xl font-editorial text-[#66635B] leading-relaxed">
-              From the first sketch to the final frame, we bring together production, design, direction, and craft to turn ideas into worlds worth watching.
+              From films and web series to music videos, corporate features, and branding content — we are your all-in-one creative powerhouse based in Mumbai. We bring stories to life with cinematic craft and meticulous attention to detail.
             </p>
 
             <div className="p-6 rounded bg-[#F3EDE2] border border-[#0D0D0C]/10 space-y-3">
               <span className="text-xs font-mono-film text-[#8F4832] font-bold block">
-                [ THE CRAFT PRINCIPLE ]
+                [ THE AMUSEMAC PROMISE ]
               </span>
               <p className="text-sm font-mono-film text-[#0D0D0C]/80 leading-relaxed">
-                We believe the strongest films are born when the Art Department, the Cinematographer, and the Director work as a single unified consciousness from day zero.
+                Whether it’s a corporate project or an independent artist’s vision, we bring your ideas to life with end-to-end production support, delivering immersive brand experiences that make your stories shine.
               </p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export function AboutSection() {
                 sizes="(max-width: 1024px) 100vw, 450px"
               />
               <div className="absolute bottom-3 left-3 px-3 py-1.5 bg-[#0D0D0C]/80 backdrop-blur-xs text-[#F4EFE6] text-[10px] font-mono-film rounded">
-                STUDIO HEADQUARTERS // MUMBAI
+                MALAD WEST, MUMBAI // HEADQUARTERS
               </div>
             </div>
           </div>

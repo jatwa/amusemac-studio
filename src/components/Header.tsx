@@ -1,8 +1,8 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Clapperboard, Compass } from 'lucide-react';
+import { Menu, X, Compass } from 'lucide-react';
 import { AudioAmbiance } from './AudioAmbiance';
 import { soundEngine } from '@/lib/audio';
 
@@ -14,7 +14,6 @@ export function Header() {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      // Format to IST (Mumbai)
       const options: Intl.DateTimeFormatOptions = {
         timeZone: 'Asia/Kolkata',
         hour: '2-digit',
@@ -29,7 +28,6 @@ export function Header() {
     updateTime();
     const interval = setInterval(updateTime, 1000);
 
-    // Frame counter loop
     const frameInterval = setInterval(() => {
       setFrameCounter((prev) => (prev + 1) % 24);
     }, 1000 / 24);
@@ -46,13 +44,13 @@ export function Header() {
   };
 
   const navLinks = [
-    { name: 'WORK', href: '#work', tag: '01' },
-    { name: 'STUDIO', href: '#behind-the-lens', tag: '02' },
-    { name: 'PROCESS', href: '#production-design', tag: '03' },
-    { name: 'SERVICES', href: '#services', tag: '04' },
-    { name: 'ABOUT', href: '#about', tag: '05' },
-    { name: 'REEL', href: '#showreel', tag: '06' },
-    { name: 'CONTACT', href: '#contact', tag: '07' },
+    { name: 'OUR CANVAS', href: '#work', tag: '01' },
+    { name: 'SCRIPT TO SCREEN', href: '#production-design', tag: '02' },
+    { name: 'SERVICES', href: '#services', tag: '03' },
+    { name: 'BEHIND THE LENS', href: '#behind-the-lens', tag: '04' },
+    { name: 'SHOWREEL', href: '#showreel', tag: '05' },
+    { name: 'CINEMATIC TIMES', href: '#cinematic-times', tag: '06' },
+    { name: "LET'S CONNECT", href: '#contact', tag: '07' },
   ];
 
   return (
@@ -79,11 +77,11 @@ export function Header() {
           </Link>
 
           {/* Desktop Center: Technical Status & Location */}
-          <div className="hidden lg:flex items-center gap-6 px-5 py-2 rounded-full border border-[#F4EFE6]/10 bg-[#121210]/70 backdrop-blur-md text-[11px] font-mono-film text-[#F4EFE6]/70">
+          <div className="hidden xl:flex items-center gap-6 px-5 py-2 rounded-full border border-[#F4EFE6]/10 bg-[#121210]/70 backdrop-blur-md text-[11px] font-mono-film text-[#F4EFE6]/70">
             <div className="flex items-center gap-2">
               <Compass className="w-3.5 h-3.5 text-[#D89B37]" />
-              <span className="text-[#F4EFE6]/50">MUMBAI</span>
-              <span className="text-[#F4EFE6]/90">18.9220° N, 72.8346° E</span>
+              <span className="text-[#F4EFE6]/50">MALAD WEST, MUMBAI</span>
+              <span className="text-[#F4EFE6]/90">19.1860° N, 72.8485° E</span>
             </div>
             <div className="w-px h-3 bg-[#F4EFE6]/15" />
             <div className="flex items-center gap-2">
@@ -99,8 +97,8 @@ export function Header() {
           </div>
 
           {/* Desktop Right: Nav Links & Audio Control */}
-          <div className="hidden md:flex items-center gap-6">
-            <nav className="flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
+            <nav className="flex items-center gap-5">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -119,7 +117,7 @@ export function Header() {
           </div>
 
           {/* Mobile Right Controls */}
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex lg:hidden items-center gap-3">
             <AudioAmbiance />
             
             <button
@@ -135,8 +133,8 @@ export function Header() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-30 bg-[#090908]/98 backdrop-blur-xl flex flex-col justify-between p-8 pt-28 md:hidden animate-in fade-in duration-300">
-          <div className="flex flex-col space-y-6">
+        <div className="fixed inset-0 z-30 bg-[#090908]/98 backdrop-blur-xl flex flex-col justify-between p-8 pt-28 lg:hidden animate-in fade-in duration-300">
+          <div className="flex flex-col space-y-5">
             <div className="text-[11px] font-mono-film text-[#D89B37] tracking-widest uppercase border-b border-[#F4EFE6]/10 pb-3">
               [ DIRECTORY / SECTIONS ]
             </div>
@@ -148,7 +146,7 @@ export function Header() {
                   soundEngine.playMechanicalClick();
                   setMobileMenuOpen(false);
                 }}
-                className="flex items-baseline justify-between text-3xl font-black tracking-tighter text-[#F4EFE6] hover:text-[#D89B37] transition-colors"
+                className="flex items-baseline justify-between text-2xl sm:text-3xl font-black tracking-tighter text-[#F4EFE6] hover:text-[#D89B37] transition-colors"
               >
                 <span>{link.name}</span>
                 <span className="text-sm font-mono-film text-[#F4EFE6]/40">{link.tag}</span>
@@ -156,13 +154,13 @@ export function Header() {
             ))}
           </div>
 
-          <div className="border-t border-[#F4EFE6]/10 pt-6 space-y-3 font-mono-film text-xs text-[#F4EFE6]/60">
+          <div className="border-t border-[#F4EFE6]/10 pt-6 space-y-2 font-mono-film text-xs text-[#F4EFE6]/60">
             <div className="flex justify-between items-center text-[#F4EFE6]/80">
               <span>MUMBAI STUDIO</span>
               <span className="text-[#D89B37]">{mumbaiTime}</span>
             </div>
             <p className="text-[11px] text-[#F4EFE6]/40">
-              Amusemac Studio • Film Production & Creative Direction
+              C 304 Shiv Sadan Apartment, Malad West, Mumbai - 400064
             </p>
           </div>
         </div>

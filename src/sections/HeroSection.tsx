@@ -1,13 +1,13 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Play, ArrowDown, Film, Clapperboard } from 'lucide-react';
+import { ArrowDown, Film, Clapperboard, Sparkles } from 'lucide-react';
 import { soundEngine } from '@/lib/audio';
 
-export function HeroSection({ onOpenReel }: { onOpenReel?: () => void }) {
+export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const videoBgRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
@@ -17,7 +17,6 @@ export function HeroSection({ onOpenReel }: { onOpenReel?: () => void }) {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      // Intro opening title animation
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       tl.fromTo(
@@ -33,7 +32,6 @@ export function HeroSection({ onOpenReel }: { onOpenReel?: () => void }) {
         '-=0.8'
       );
 
-      // Scroll-driven zoom & fade effect
       if (heroRef.current && videoBgRef.current) {
         gsap.to(videoBgRef.current, {
           scale: 1.15,
@@ -69,7 +67,7 @@ export function HeroSection({ onOpenReel }: { onOpenReel?: () => void }) {
       ref={heroRef}
       className="relative w-full min-h-screen flex flex-col justify-between pt-24 pb-12 px-6 sm:px-12 bg-[#090908] text-[#F4EFE6] overflow-hidden select-none"
     >
-      {/* Background Cinematic Atmosphere / Video Reel Loop */}
+      {/* Background Cinematic Atmosphere */}
       <div 
         ref={videoBgRef}
         className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-45"
@@ -82,7 +80,6 @@ export function HeroSection({ onOpenReel }: { onOpenReel?: () => void }) {
           className="object-cover scale-105 filter brightness-75 contrast-125 saturate-75"
           sizes="100vw"
         />
-        {/* Film vignetting & gradient masks */}
         <div className="absolute inset-0 bg-radial-[circle_at_center,transparent_20%,#090908_95%]" />
         <div className="absolute inset-0 bg-linear-to-b from-[#090908]/80 via-transparent to-[#090908]" />
       </div>
@@ -91,23 +88,26 @@ export function HeroSection({ onOpenReel }: { onOpenReel?: () => void }) {
       <div className="relative z-10 max-w-[1720px] mx-auto w-full flex items-center justify-between text-[11px] font-mono-film text-[#F4EFE6]/60 border-b border-[#F4EFE6]/10 pb-4">
         <div className="flex items-center gap-3">
           <span className="px-2 py-0.5 rounded bg-[#D89B37]/15 text-[#D89B37] border border-[#D89B37]/30 font-bold">
-            PROD NO. 09
+            STUDIO PROD // 2024–2025
           </span>
-          <span className="hidden sm:inline">AMUSEMAC STUDIO // MUMBAI</span>
+          <span className="hidden sm:inline">AMUSEMAC STUDIO • MUMBAI</span>
         </div>
 
         <div className="flex items-center gap-4 text-right">
-          <span className="hidden md:inline">35MM / 2.39:1 ANAMORPHIC</span>
+          <span className="hidden md:inline">ADVERTISING • FILMS • STORIES</span>
           <span className="text-[#D89B37] font-semibold">24 FPS SOUND SPEED</span>
         </div>
       </div>
 
-      {/* Center: Massive Hero Typography (Oversized Editorial) */}
+      {/* Center: Massive Hero Typography */}
       <div 
         ref={headlineRef}
         className="relative z-10 max-w-[1720px] mx-auto w-full my-auto py-12"
       >
         <div className="overflow-hidden">
+          <span className="text-xs sm:text-sm font-mono-film text-[#D89B37] tracking-widest uppercase block mb-3">
+            [ WE FORGE EMOTIONS YOU CAN&apos;T UNSEE ]
+          </span>
           <h1 className="hero-line film-title-huge text-[#F4EFE6] tracking-tighter m-0 font-black">
             MAD ABOUT
           </h1>
@@ -125,19 +125,19 @@ export function HeroSection({ onOpenReel }: { onOpenReel?: () => void }) {
         ref={metaRef}
         className="relative z-10 max-w-[1720px] mx-auto w-full grid grid-cols-1 md:grid-cols-3 items-end gap-8 pt-6 border-t border-[#F4EFE6]/10 text-xs font-mono-film"
       >
-        {/* Left: Studio Mission */}
+        {/* Left: Studio Ethos */}
         <div className="space-y-1">
-          <span className="text-[#D89B37] block">[ STUDIO ORIGIN ]</span>
-          <p className="text-sm font-editorial text-[#F4EFE6]/90 max-w-sm">
-            A Mumbai-based film production & creative studio working across narrative cinema, world-building, and commercial storytelling.
+          <span className="text-[#D89B37] block">[ OLD-SCHOOL GRIT & CRAFT ]</span>
+          <p className="text-sm font-editorial text-[#F4EFE6]/90 max-w-sm leading-relaxed">
+            Ads, films, and stories built the old school way — craft, grit, and a little obsession. If it doesn’t stop the scroll or stir the soul, we’re not shipping it.
           </p>
         </div>
 
-        {/* Center: Disciplines Tagline */}
+        {/* Center: Canvas Categories */}
         <div className="text-center hidden md:block">
-          <span className="text-[#F4EFE6]/40 tracking-widest block text-[10px] uppercase mb-1">DISCIPLINES</span>
+          <span className="text-[#F4EFE6]/40 tracking-widest block text-[10px] uppercase mb-1">OUR CANVAS</span>
           <p className="text-[#F4EFE6]/80 font-mono-film text-xs tracking-wider">
-            FILMS / ADS / STORIES / WORLDS
+            ADS / CORPORATE / MUSIC VIDEOS / DOCS / WEBSERIES
           </p>
         </div>
 
@@ -146,10 +146,10 @@ export function HeroSection({ onOpenReel }: { onOpenReel?: () => void }) {
           <a
             href="#intro"
             onClick={() => soundEngine.playMechanicalClick()}
-            data-cursor-action="SCROLL"
+            data-cursor-action="ENTER CANVAS"
             className="group flex items-center gap-3 text-xs font-mono-film text-[#F4EFE6]/80 hover:text-[#D89B37] transition-colors"
           >
-            <span className="tracking-widest uppercase">[ SCROLL TO ENTER THE WORLD ]</span>
+            <span className="tracking-widest uppercase">[ EXPLORE THE CANVAS ]</span>
             <div className="w-8 h-8 rounded-full border border-[#F4EFE6]/20 group-hover:border-[#D89B37] flex items-center justify-center group-hover:translate-y-1 transition-all">
               <ArrowDown className="w-4 h-4 text-[#D89B37]" />
             </div>

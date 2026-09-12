@@ -1,13 +1,12 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
-import { behindTheLensMoments, BehindTheLensMoment } from '@/data/behindTheLens';
-import { Camera, Film, MapPin, Eye } from 'lucide-react';
+import { teamMembers, TeamMember } from '@/data/team';
+import { Camera, Sparkles, UserCheck, Film } from 'lucide-react';
 import { soundEngine } from '@/lib/audio';
 
 export function BehindTheLensSection() {
-  const [activeMoment, setActiveMoment] = useState<BehindTheLensMoment>(behindTheLensMoments[0]);
+  const [selectedMember, setSelectedMember] = useState<TeamMember>(teamMembers[0]);
 
   return (
     <section 
@@ -21,77 +20,66 @@ export function BehindTheLensSection() {
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-xs font-mono-film text-[#D89B37]">
               <Camera className="w-3.5 h-3.5" />
-              <span>[ 05 // FIELD LOGS & STUDIO LIFE ]</span>
+              <span>[ 05 // BEHIND THE LENS • THE JOURNEY ]</span>
             </div>
             <h2 className="text-4xl sm:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
-              BEHIND THE LENS<span className="text-[#D89B37]">.</span>
+              STORYTELLERS AT HEART<span className="text-[#D89B37]">.</span>
             </h2>
           </div>
 
-          <p className="text-sm sm:text-base font-editorial text-[#F4EFE6]/60 max-w-md">
-            No corporate headshots. Real sets, dusty 3 AM soundstage calls, high-altitude field audio, and the human obsession that breathes into every frame.
+          <p className="text-sm sm:text-base font-editorial text-[#F4EFE6]/70 max-w-md leading-relaxed">
+            We’re a collective of passionate creators — filmmakers, writers, editors, producers, and FTII alumni — brought together by one belief: every story deserves to be told, and told well.
           </p>
         </div>
 
-        {/* Documentary Photo Matrix */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {behindTheLensMoments.map((moment, idx) => (
+        {/* Team Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {teamMembers.map((member, idx) => (
             <div
-              key={moment.id}
+              key={member.id}
               onClick={() => {
                 soundEngine.playMechanicalClick();
-                setActiveMoment(moment);
+                setSelectedMember(member);
               }}
-              data-cursor-text="LOG"
-              className={`group cursor-pointer p-4 rounded-xs border transition-all duration-300 space-y-4 ${
-                activeMoment.id === moment.id
+              data-cursor-text="CREW"
+              className={`p-6 sm:p-8 rounded-xs border transition-all duration-300 space-y-4 cursor-pointer flex flex-col justify-between ${
+                selectedMember.id === member.id
                   ? 'bg-[#181816] border-[#D89B37]'
                   : 'bg-[#121210] border-[#F4EFE6]/10 hover:border-[#F4EFE6]/30'
               }`}
             >
-              {/* Image Frame with 35mm Slate Info */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xs bg-[#1A1A1A]">
-                <Image
-                  src={moment.image}
-                  alt={moment.title}
-                  fill
-                  className="object-cover film-image group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 400px"
-                />
-                
-                {/* Slate Overlay */}
-                <div className="absolute top-2 left-2 px-2 py-1 bg-black/75 rounded text-[9px] font-mono-film text-[#D89B37]">
-                  {moment.rollNumber}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-[11px] font-mono-film">
+                  <span className="text-[#D89B37] font-bold">MEMBER 0{idx + 1}</span>
+                  {member.credential && (
+                    <span className="px-2 py-0.5 rounded bg-[#D89B37]/15 text-[#D89B37] border border-[#D89B37]/30 text-[10px]">
+                      {member.credential}
+                    </span>
+                  )}
                 </div>
 
-                <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/75 rounded text-[9px] font-mono-film text-[#F4EFE6]/80">
-                  {moment.slateData.fps} • {moment.slateData.lens}
-                </div>
-              </div>
-
-              {/* Slate Metadata & Field Note */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-[11px] font-mono-film text-[#F4EFE6]/50">
-                  <span className="text-[#D89B37] font-semibold">{moment.projectRef}</span>
-                  <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{moment.location}</span>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#F4EFE6]">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs font-mono-film text-[#D89B37] pt-1">
+                    {member.role}
+                  </p>
                 </div>
 
-                <h3 className="text-lg font-black uppercase tracking-tight text-[#F4EFE6] group-hover:text-[#D89B37] transition-colors">
-                  {moment.title}
-                </h3>
+                <p className="text-xs italic font-editorial text-[#F4EFE6]/80 pt-1">
+                  “{member.tagline}”
+                </p>
 
-                <p className="text-xs font-editorial text-[#F4EFE6]/70 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all">
-                  {moment.notes}
+                <p className="text-xs font-editorial text-[#F4EFE6]/60 leading-relaxed pt-2">
+                  {member.bio}
                 </p>
               </div>
 
-              {/* Technical Slate Box */}
-              <div className="pt-2 border-t border-[#F4EFE6]/5 grid grid-cols-3 gap-1 text-[10px] font-mono-film text-[#F4EFE6]/40">
-                <div>ROLL: <span className="text-[#F4EFE6]/80">{moment.slateData.roll}</span></div>
-                <div>SCENE: <span className="text-[#F4EFE6]/80">{moment.slateData.scene}</span></div>
-                <div>TAKE: <span className="text-[#F4EFE6]/80">{moment.slateData.take}</span></div>
+              <div className="pt-4 border-t border-[#F4EFE6]/10 flex items-center justify-between text-[11px] font-mono-film text-[#F4EFE6]/40">
+                <span>AMUSEMAC STUDIO</span>
+                <span className="text-[#D89B37]">{member.credential ? 'FTII ALUM' : 'CORE LEAD'}</span>
               </div>
-
             </div>
           ))}
         </div>

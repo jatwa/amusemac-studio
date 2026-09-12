@@ -1,43 +1,43 @@
-﻿export interface CollaboratorGroup {
+export interface CollaboratorGroup {
   category: string;
   items: string[];
 }
 
 export const collaboratorGroups: CollaboratorGroup[] = [
   {
-    category: 'STUDIOS & STREAMERS',
+    category: 'BRANDS & ENTERPRISES',
     items: [
-      'Netflix India',
-      'Amazon Prime Video',
-      'Vice Studios',
-      'Yash Raj Films',
-      'Excel Entertainment',
-      'Tiger Baby Films',
-      'Drishyam Films'
+      'Britannia Industries',
+      'Tata Salt (Tata Consumer Products)',
+      'Axis Mutual Fund',
+      'Tata Mutual Fund',
+      'Toyota',
+      'Dainik Bhaskar',
+      'uppercase',
+      'Akasa Air',
+      'Kelvinator',
+      'Ambi Pur',
+      'Pataa Navigation',
+      'Yadav Measurement Pvt. Ltd',
+      'Agarwal Packers and Movers (APML / StoreKar)',
+      'StreetOrigins'
     ]
   },
   {
-    category: 'BRANDS & CULTURAL HOUSES',
+    category: 'PLATFORMS & STUDIOS',
     items: [
-      'Royal Enfield',
-      'Def Jam Recordings India',
-      'Mass Appeal India',
-      'Spotify India',
-      'Red Bull Media House',
-      'FabIndia Heritage',
-      'Airbnb India',
-      'GQ India'
+      'ZEE5 Original Series',
+      'Independent Film Productions',
+      'Digital & OTT Networks',
+      'Commercial Agency Partners'
     ]
   },
   {
-    category: 'FESTIVAL RECOGNITION & AWARDS',
+    category: 'INSTITUTIONAL & FILM CRAFT',
     items: [
-      'Clermont-Ferrand ISFF (Official Selection)',
-      'Doc Edge International Film Festival',
-      'MAMI Mumbai Film Festival',
-      'IFFI Goa Panorama',
-      'Kolkata International Film Festival',
-      'Indian Society of Cinematographers (ISC Honor)'
+      'Film and Television Institute of India (FTII)',
+      'Documentary & Independent Film Networks',
+      'Social & Public Health Storytelling Initiatives'
     ]
   }
 ];

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { HeroSection } from '@/sections/HeroSection';
 import { IntroSection } from '@/sections/IntroSection';
 import { FeaturedWorkSection } from '@/sections/FeaturedWorkSection';
@@ -9,6 +9,7 @@ import { BehindTheLensSection } from '@/sections/BehindTheLensSection';
 import { ShowreelSection } from '@/sections/ShowreelSection';
 import { AboutSection } from '@/sections/AboutSection';
 import { CollaboratorsSection } from '@/sections/CollaboratorsSection';
+import { CinematicTimesSection } from '@/sections/CinematicTimesSection';
 import { ContactSection } from '@/sections/ContactSection';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -24,19 +25,19 @@ export default function HomePage() {
       {/* 01: Manifesto & Intro (Light Ivory) */}
       <IntroSection />
 
-      {/* 02: Selected Work (Dark Charcoal) */}
+      {/* 02: Our Canvas - Selected Work (Dark Charcoal) */}
       <FeaturedWorkSection />
 
       {/* 03: Horizontal Cinema Contact Sheet */}
       <HorizontalReelSection />
 
-      {/* 04: Production Design & World-Building (Light Ivory) */}
+      {/* 04: Script to Screen - Production Journey (Light Ivory) */}
       <ProductionDesignSection />
 
       {/* 05: Disciplines & Services (Dark Charcoal) */}
       <DisciplinesSection />
 
-      {/* 06: Behind The Lens (Documentary Studio Wall) */}
+      {/* 06: Behind The Lens - The Creative Team & FTII Alumni */}
       <BehindTheLensSection />
 
       {/* 07: Watch The Reel (Anamorphic Player) */}
@@ -45,10 +46,13 @@ export default function HomePage() {
       {/* 08: About Amusemac (Light Ivory) */}
       <AboutSection />
 
-      {/* 09: Collaborators & Honors */}
+      {/* 09: Trusted by Brands & Collaborators */}
       <CollaboratorsSection />
 
-      {/* 10: End Credits & Dispatch */}
+      {/* 10: Cinematic Times - Journal & Insights (Light Ivory) */}
+      <CinematicTimesSection />
+
+      {/* 11: End Credits & Reach Us */}
       <ContactSection />
 
       {/* Footer */}

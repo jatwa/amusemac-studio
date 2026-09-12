@@ -1,13 +1,12 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Sparkles, Clapperboard, Compass } from 'lucide-react';
+import { Sparkles, Film, Compass } from 'lucide-react';
 
 export function IntroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const textBlockRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -40,73 +39,71 @@ export function IntroSection() {
       {/* Top Editorial Film Margin */}
       <div className="max-w-[1720px] mx-auto flex items-center justify-between text-xs font-mono-film text-[#66635B] border-b border-[#0D0D0C]/10 pb-6 mb-16 sm:mb-24">
         <div className="flex items-center gap-3">
-          <span className="font-bold text-[#0D0D0C]">[ MANIFESTO // 01 ]</span>
-          <span>THE AMUSEMAC PREMISE</span>
+          <span className="font-bold text-[#0D0D0C]">[ WHO WE ARE // 01 ]</span>
+          <span>MAD ABOUT CREATION</span>
         </div>
         <div className="hidden sm:flex items-center gap-2">
-          <span>CINEMA AS SPATIAL REALITY</span>
+          <span>CINEMATIC CRAFT • BUSINESS OUTCOMES</span>
           <span>•</span>
-          <span>EST. MUMBAI</span>
+          <span>MUMBAI, INDIA</span>
         </div>
       </div>
 
       {/* Massive Asymmetrical Typography Layout */}
-      <div 
-        ref={textBlockRef}
-        className="max-w-[1720px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start"
-      >
-        {/* Left 8 Cols: Giant Headline */}
+      <div className="max-w-[1720px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+        
+        {/* Left 8 Cols: Giant Headline & Verified Manifesto */}
         <div className="lg:col-span-8 space-y-2">
           <div className="overflow-hidden">
+            <span className="text-xs sm:text-sm font-mono-film text-[#8F4832] font-bold uppercase tracking-widest block mb-2">
+              [ THE PHILOSOPHY ]
+            </span>
             <h2 className="intro-char film-title-xl tracking-tighter font-black text-[#0D0D0C] m-0">
-              WE DON&apos;T JUST
+              TURNING IDEAS INTO
             </h2>
           </div>
           <div className="overflow-hidden">
-            <h2 className="intro-char film-title-xl tracking-tighter font-black text-[#66635B] m-0">
-              MAKE FILMS.
-            </h2>
-          </div>
-          <div className="overflow-hidden pt-4 sm:pt-8">
             <h2 className="intro-char film-title-xl tracking-tighter font-black text-[#8F4832] m-0">
-              WE BUILD
-            </h2>
-          </div>
-          <div className="overflow-hidden">
-            <h2 className="intro-char film-title-xl tracking-tighter font-black text-[#0D0D0C] m-0">
-              WORLDS
+              CINEMATIC
             </h2>
           </div>
           <div className="overflow-hidden">
             <h2 className="intro-char film-title-xl tracking-tighter font-black text-[#D89B37] m-0">
-              FOR THEM.
+              REALITY<span className="text-[#0D0D0C]">.</span>
             </h2>
+          </div>
+
+          <div className="pt-8 max-w-2xl space-y-4 text-base sm:text-xl font-editorial text-[#0D0D0C] leading-relaxed">
+            <p className="font-semibold text-xl sm:text-2xl text-[#0D0D0C]">
+              “We’re not just a studio; we’re obsessed with crafting visuals that live beyond the screen.”
+            </p>
+            <p className="text-sm sm:text-base font-editorial text-[#66635B]">
+              Old-school storytelling with modern production — built to move hearts and metrics. From ads that cut through the noise to films that move people, our work makes audiences stop, feel, and remember.
+            </p>
           </div>
         </div>
 
-        {/* Right 4 Cols: Editorial Notes & Studio Ethos */}
-        <div className="lg:col-span-4 space-y-8 lg:pt-16">
-          <div className="p-8 rounded-sm bg-[#F3EDE2] border border-[#0D0D0C]/10 space-y-6 shadow-xs">
-            <div className="flex items-center justify-between text-xs font-mono-film text-[#8F4832]">
-              <span>[ STUDIO IDENTITY ]</span>
-              <span>2024 / 2025</span>
-            </div>
-
-            <p className="text-base sm:text-lg font-editorial text-[#0D0D0C] leading-relaxed">
-              Amusemac Studio is a Mumbai-based production and creative studio working across narrative feature films, advertising, documentaries, music videos, and immersive visual storytelling.
-            </p>
-
-            <div className="w-full h-px bg-[#0D0D0C]/10" />
-
-            <p className="text-sm font-mono-film text-[#66635B] leading-relaxed">
-              Cinema is not just our business. It is our obsession. We design the physical rooms, the light temperatures, and the tactile materials before the first camera roll is called.
+        {/* Right 4 Cols: Studio Pillars from amusemacstudio.in */}
+        <div className="lg:col-span-4 space-y-6 lg:pt-8">
+          
+          <div className="p-8 rounded-sm bg-[#F3EDE2] border border-[#0D0D0C]/10 space-y-4 shadow-xs">
+            <span className="text-xs font-mono-film text-[#8F4832] uppercase tracking-wider block font-bold">
+              [ DESIGN MEETS STORYTELLING ]
+            </span>
+            <p className="text-sm font-editorial text-[#0D0D0C] leading-relaxed">
+              Every frame we build balances art direction, detail, and emotion — because style only matters if it serves the story.
             </p>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-mono-film text-[#66635B] pl-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#8F4832]" />
-            <span>PRODUCTION • DESIGN • DIRECTION • CRAFT</span>
+          <div className="p-8 rounded-sm bg-[#F3EDE2] border border-[#0D0D0C]/10 space-y-4 shadow-xs">
+            <span className="text-xs font-mono-film text-[#0D0D0C] uppercase tracking-wider block font-bold">
+              [ TRUSTED BY BRANDS & FILMMAKERS ]
+            </span>
+            <p className="text-sm font-editorial text-[#66635B] leading-relaxed">
+              From scripting your next binge-worthy web series to capturing the raw honesty of a documentary, we take on every project like it’s our own.
+            </p>
           </div>
+
         </div>
 
       </div>
