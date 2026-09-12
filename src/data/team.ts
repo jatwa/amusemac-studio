@@ -34,7 +34,7 @@ export const teamMembers: TeamMember[] = [
     role: 'Sync Sound Recordist & Sound Mixer',
     credential: 'FTII ALUMNUS',
     tagline: 'Sound is the Soul of the Scene',
-    bio: 'A graduate of the prestigious FTII, Nilesh treats sound not just as an element, but as an emotion. His expertise in capturing sync sound and crafting rich audio layers ensures that every whisper, every echo, and every beat resonates with the audience.',
+    bio: 'A graduate of FTII, Nilesh treats sound not just as an element, but as an emotion. His expertise in capturing sync sound and crafting rich audio layers ensures that every whisper, every echo, and every beat resonates with the audience.',
     image: amusemacMedia.team.nileshJatwa
   },
   {
