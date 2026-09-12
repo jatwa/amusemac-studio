@@ -4,8 +4,9 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowDown, Film, Clapperboard, Sparkles } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { soundEngine } from '@/lib/audio';
+import { amusemacMedia } from '@/lib/media';
 
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -70,14 +71,14 @@ export function HeroSection() {
       {/* Background Cinematic Atmosphere */}
       <div 
         ref={videoBgRef}
-        className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-45"
+        className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-40"
       >
         <Image
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2400&auto=format&fit=crop"
+          src={amusemacMedia.brand.heroBg}
           alt="Amusemac Studio Film Canvas"
           fill
           priority
-          className="object-cover scale-105 filter brightness-75 contrast-125 saturate-75"
+          className="object-cover scale-105 filter brightness-80 contrast-125 saturate-90"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-radial-[circle_at_center,transparent_20%,#090908_95%]" />

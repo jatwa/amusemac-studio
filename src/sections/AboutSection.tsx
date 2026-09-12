@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Film, Award, Heart, Sparkles } from 'lucide-react';
+import { Film } from 'lucide-react';
+import { amusemacMedia } from '@/lib/media';
 
 export function AboutSection() {
   const pillars = [
@@ -69,12 +70,12 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Right 5 Cols: Studio Still Frame */}
+          {/* Right 5 Cols: Real Studio Visual */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xs border border-[#0D0D0C]/20 bg-[#E5DCD0]">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xs border border-[#0D0D0C]/20 bg-[#E5DCD0] shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop"
-                alt="Amusemac Studio Craft"
+                src={amusemacMedia.about.whoAreWe}
+                alt="Amusemac Studio Craft & Production"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 450px"

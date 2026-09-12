@@ -1,3 +1,5 @@
+import { amusemacMedia } from '@/lib/media';
+
 export interface ProjectCredit {
   role: string;
   name: string;
@@ -47,18 +49,18 @@ export const projects: Project[] = [
     aspectRatio: '16:9 Commercial',
     location: 'Mumbai / North India',
     logline: '“Sach, Kareeb Se Dikhta Hai” — A grounded, human commercial campaign bringing out the gritty truth of real journalism.',
-    synopsis: 'A high-impact 3-part advertisement series starring acclaimed actor Pankaj Tripathi, capturing authentic Indian nuances with subtle humor and profound observational truth.',
-    heroImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&auto=format&fit=crop',
+    synopsis: 'A high-impact advertisement series starring acclaimed actor Pankaj Tripathi, capturing authentic Indian nuances with subtle humor and profound observational truth.',
+    heroImage: amusemacMedia.projects.dainikBhaskar,
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1400&auto=format&fit=crop',
+        url: amusemacMedia.projects.dainikBhaskar,
         caption: 'Pankaj Tripathi Ad Series — Framing the quiet realism of everyday Indian life',
         aspect: 'cinema',
         type: 'still'
       },
       {
-        url: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1200&auto=format&fit=crop',
-        caption: 'Location lighting calibration for natural village tea-stall scene',
+        url: amusemacMedia.services.brandCampaign,
+        caption: 'On-set lighting setup — Amusemac light crew at work',
         aspect: 'portrait',
         type: 'lighting'
       }
@@ -86,13 +88,13 @@ export const projects: Project[] = [
     location: 'Mumbai',
     logline: 'When everyday cricket passion turns any train seat or street kite into an official umpire decision.',
     synopsis: 'A lively, humorous commercial campaign for Britannia 5050 capturing spontaneous cricket culture across India with energetic pacing and sharp comic timing.',
-    heroImage: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=1920&auto=format&fit=crop',
+    heroImage: amusemacMedia.projects.britannia5050,
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Train Seat Umpire Setup — Practical Mumbai local train interior recreation',
+        url: amusemacMedia.projects.britannia5050,
+        caption: 'Britannia 50-50 4th Umpire campaign still',
         aspect: 'cinema',
-        type: 'set'
+        type: 'still'
       }
     ],
     palette: ['#0A0F14', '#D89B37', '#E74C3C', '#F8F5EE', '#2C3E50'],
@@ -117,19 +119,13 @@ export const projects: Project[] = [
     location: 'India',
     logline: 'Dedicated to the tireless efforts of Organ Transplant Coordinators dealing with the intensities of life, death, and human grace.',
     synopsis: 'The film explores the profound subject of organ donation through the lens of 4 transplant coordinators. Moving through hospitals and grieving families, it humanizes those who bridge the fragile boundary between mortality and second chances.',
-    heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1920&auto=format&fit=crop',
+    heroImage: amusemacMedia.projects.documentaries,
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Observational hospital corridor framing — capturing quiet human resilience',
+        url: amusemacMedia.projects.documentaries,
+        caption: 'Documentary production frame — capturing quiet human resilience',
         aspect: 'cinema',
         type: 'still'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop',
-        caption: 'Intimate interview lighting for the 4 transplant coordinators',
-        aspect: 'portrait',
-        type: 'lighting'
       }
     ],
     palette: ['#1C241D', '#3F4E3A', '#8F4832', '#D9CDBC', '#D89B37'],
@@ -144,31 +140,31 @@ export const projects: Project[] = [
   },
   {
     id: '04',
-    slug: 'testimony-of-ana',
-    title: 'TESTIMONY OF ANA',
-    subtitle: 'Myths, Patriarchy & The Scars Left Behind',
-    category: 'Documentaries',
-    year: '2022',
-    aspectRatio: 'Academy / 16:9',
-    location: 'Rural India',
-    logline: 'An award-winning documentary taking us into the life of Ana, an elderly woman navigating the intersection of centuries-old superstition and cultural violence.',
-    synopsis: 'In a remote Indian village, centuries-old myths about women’s bodies and power still cast long shadows. Testimony of Ana is a haunting exploration of superstition, patriarchy, and the scars—both visible and invisible—that they leave behind.',
-    heroImage: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=1920&auto=format&fit=crop',
+    slug: 'tata-salt-har-narangi-pack',
+    title: 'TATA SALT',
+    subtitle: 'Har Narangi Pack Tata Namak Nahi Hota',
+    category: 'Advertisement',
+    client: 'Tata Consumer Products',
+    year: '2023',
+    aspectRatio: '16:9 Commercial',
+    location: 'Mumbai',
+    logline: 'Countering look-alike counterfeit brands with sharp Kirana and Mujrim narrative sketches.',
+    synopsis: 'A widely recognized television and digital commercial reinforcing consumer trust and authentic packaging awareness for India’s most trusted salt brand.',
+    heroImage: amusemacMedia.projects.tataSalt,
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Monochromatic portraiture and shadow studies in rural village courtyards',
+        url: amusemacMedia.projects.tataSalt,
+        caption: 'Tata Salt — Har Narangi Pack Tata Namak Nahi Hota campaign',
         aspect: 'cinema',
         type: 'still'
       }
     ],
-    palette: ['#080808', '#202B38', '#8F4832', '#C9D4DF', '#D89B37'],
+    palette: ['#E67E22', '#2980B9', '#121210', '#F3EDE2', '#D89B37'],
     credits: [
-      { role: 'Documentary Studio', name: 'Amusemac Studio' },
-      { role: 'Subject', name: 'Ana & Village Elders' },
-      { role: 'Recognition', name: 'Award-Winning Documentary' }
+      { role: 'Brand', name: 'Tata Salt' },
+      { role: 'Production Team', name: 'Amusemac Studio' }
     ],
-    disciplines: ['Documentaries', 'Visual Storytelling', 'Cinematography'],
+    disciplines: ['Advertisement', 'Set Design & Art Direction', 'Video Production'],
     featured: true,
     horizontalFeature: true
   },
@@ -184,11 +180,11 @@ export const projects: Project[] = [
     location: 'Yari Road, Mumbai',
     logline: 'Turning industrial precision and boardroom visions into screen-worthy cinematic narratives.',
     synopsis: 'From pre-production brainstorms to on-set execution, this corporate film and Mobilab brand story captures the passion and technical mastery of Yadav Measurement.',
-    heroImage: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1920&auto=format&fit=crop',
+    heroImage: amusemacMedia.projects.yadavMeasurement,
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1541888946425-d0fbb186156a?q=80&w=1400&auto=format&fit=crop',
-        caption: 'MobiLab tech unit on-location shoot at Mumbai facility',
+        url: amusemacMedia.projects.yadavMeasurement,
+        caption: 'Yadav Measurement corporate film on-location production',
         aspect: 'cinema',
         type: 'set'
       }
@@ -208,37 +204,6 @@ export const projects: Project[] = [
   },
   {
     id: '06',
-    slug: 'uppercase-x-akasa-air',
-    title: 'UPPERCASE × AKASA AIR',
-    subtitle: 'Smart, Sustainable Cabin Gear for the Crew',
-    category: 'Corporate Films',
-    client: 'uppercase / Akasa Air',
-    year: '2023',
-    aspectRatio: '16:9 Commercial & Corporate',
-    location: 'Mumbai Airport & Flight Deck',
-    logline: 'uppercase partners with Akasa Air to design custom eco-friendly cabin gear crafted with RCS-certified recycled materials.',
-    synopsis: 'Co-created with direct input from Akasa’s cabin crew, this brand film highlights sustainable utility, innovation, and Indian design craftsmanship.',
-    heroImage: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=1920&auto=format&fit=crop',
-    gallery: [
-      {
-        url: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Product ergonomics and sustainable material close-up framing',
-        aspect: 'cinema',
-        type: 'still'
-      }
-    ],
-    palette: ['#FF6B00', '#121210', '#F8F5EE', '#7F8C8D', '#D89B37'],
-    credits: [
-      { role: 'Brand Partners', name: 'uppercase & Akasa Air' },
-      { role: 'Production', name: 'Amusemac Studio' },
-      { role: 'Focus', name: 'Sustainable Design & Made in India' }
-    ],
-    disciplines: ['Corporate Films', 'Advertisement', 'Branded Content'],
-    featured: true,
-    horizontalFeature: true
-  },
-  {
-    id: '07',
     slug: 'pataa-mad-over-address',
     title: 'PATAA APP CAMPAIGN',
     subtitle: 'Mad Over Address // Address Made Simple',
@@ -249,11 +214,11 @@ export const projects: Project[] = [
     location: 'Indore & Mumbai',
     logline: '“Address By Paanwala”, “Baraat In A Funeral”, and “North Meets South” — solving India’s complex address navigation through irreverent storytelling.',
     synopsis: 'A hilarious, culturally sharp ad campaign highlighting the chaos of finding addresses in Indian cities and how digital geocoding solves it.',
-    heroImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1920&auto=format&fit=crop',
+    heroImage: amusemacMedia.projects.pataaApp,
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Baraat in a Funeral scene — live comedic timing on location',
+        url: amusemacMedia.projects.pataaApp,
+        caption: 'Pataa App — Address Made Simple campaign frame',
         aspect: 'cinema',
         type: 'still'
       }
@@ -265,36 +230,66 @@ export const projects: Project[] = [
       { role: 'Format', name: 'Digital Ad Campaign Series' }
     ],
     disciplines: ['Advertisement', 'Creative Direction', 'Video Production'],
+    featured: true,
+    horizontalFeature: true
+  },
+  {
+    id: '07',
+    slug: 'streetorigins-energy',
+    title: 'STREETORIGINS AD',
+    subtitle: 'Morgue & Unapologetic Energy',
+    category: 'Advertisement',
+    client: 'StreetOrigins',
+    year: '2023',
+    aspectRatio: '16:9 Commercial',
+    location: 'Mumbai',
+    logline: 'High-octane urban energy and unapologetic visual attitude.',
+    synopsis: 'An electric, raw commercial film created for StreetOrigins celebrating youth streetwear, music, and street authenticity.',
+    heroImage: amusemacMedia.projects.streetOrigins,
+    gallery: [
+      {
+        url: amusemacMedia.projects.streetOrigins,
+        caption: 'StreetOrigins visual campaign frame',
+        aspect: 'cinema',
+        type: 'still'
+      }
+    ],
+    palette: ['#FF0055', '#121210', '#F8F5EE', '#7F8C8D', '#D89B37'],
+    credits: [
+      { role: 'Client', name: 'StreetOrigins' },
+      { role: 'Production', name: 'Amusemac Studio' }
+    ],
+    disciplines: ['Advertisement', 'Creative Direction', 'Visuals'],
     featured: false,
     horizontalFeature: true
   },
   {
     id: '08',
-    slug: 'tata-salt-har-narangi-pack',
-    title: 'TATA SALT',
-    subtitle: 'Har Narangi Pack Tata Namak Nahi Hota',
+    slug: 'axis-mutual-fund-sip',
+    title: 'AXIS MUTUAL FUND',
+    subtitle: 'Plan Smart with Axis MF // #InvestEasy #SIPNow',
     category: 'Advertisement',
-    client: 'Tata Consumer Products',
+    client: 'Axis Mutual Fund',
     year: '2023',
     aspectRatio: '16:9 Commercial',
     location: 'Mumbai',
-    logline: 'Countering look-alike counterfeit brands with sharp Kirana and Mujrim narrative sketches.',
-    synopsis: 'A widely recognized television and digital commercial reinforcing consumer trust and authentic packaging awareness for India’s most trusted salt brand.',
-    heroImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1920&auto=format&fit=crop',
+    logline: 'Multiple Goals? Multiple SIPs — Making financial wisdom approachable through clean storytelling.',
+    synopsis: 'A digital and commercial campaign clarifying micro-investing and index funds for modern Indian investors.',
+    heroImage: amusemacMedia.projects.axisMutualFund,
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1400&auto=format&fit=crop',
-        caption: 'Traditional Kirana store set dressing and lighting setup',
+        url: amusemacMedia.projects.axisMutualFund,
+        caption: 'Axis MF — Multiple Goals? Multiple SIPs campaign',
         aspect: 'cinema',
-        type: 'set'
+        type: 'still'
       }
     ],
-    palette: ['#E67E22', '#2980B9', '#121210', '#F3EDE2', '#D89B37'],
+    palette: ['#97144D', '#121210', '#F3EDE2', '#ED1C24', '#D89B37'],
     credits: [
-      { role: 'Brand', name: 'Tata Salt' },
-      { role: 'Production Team', name: 'Amusemac Studio' }
+      { role: 'Client', name: 'Axis Mutual Fund' },
+      { role: 'Production', name: 'Amusemac Studio' }
     ],
-    disciplines: ['Advertisement', 'Set Design & Art Direction', 'Video Production'],
+    disciplines: ['Advertisement', 'Video Production'],
     featured: false,
     horizontalFeature: true
   }

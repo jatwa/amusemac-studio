@@ -1,3 +1,5 @@
+import { amusemacMedia } from '@/lib/media';
+
 export interface Discipline {
   id: string;
   number: string;
@@ -21,7 +23,7 @@ export const disciplines: Discipline[] = [
       'Creating pitch decks for investors & platforms',
       'Balancing creative vision with market viability'
     ],
-    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.scriptAndPitchDevelopment
   },
   {
     id: 'advertisements',
@@ -35,7 +37,7 @@ export const disciplines: Discipline[] = [
       'Star & celebrity talent direction',
       'High-speed cinematography & broadcast mastering'
     ],
-    image: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.brandCampaign
   },
   {
     id: 'production-design',
@@ -49,11 +51,25 @@ export const disciplines: Discipline[] = [
       'Hero prop sourcing & custom fabrication',
       'Atmospheric set dressing & practical lighting'
     ],
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.clothAndProductionDesign
+  },
+  {
+    id: 'film-production',
+    number: '04',
+    name: 'FILM & CONTENT PRODUCTION',
+    shortTag: 'CINEMATIC CRAFT & DETAIL',
+    description: 'Full-spectrum production for films, commercials, and digital features with industry-standard equipment and meticulous on-set discipline.',
+    deliverables: [
+      'Line & creative production management',
+      'Equipment & camera package logistics',
+      'Location scouting across India',
+      'Experienced department heads & crew'
+    ],
+    image: amusemacMedia.services.filmAndContentProduction
   },
   {
     id: 'sync-sound',
-    number: '04',
+    number: '05',
     name: 'SYNC SOUND & AUDIO MIXING',
     shortTag: 'FTII TRAINED SOUND CRAFT',
     description: 'Sound isn’t background — it’s the soul of the scene. Expert sync sound recording on set and rich acoustic layering that resonates with the audience.',
@@ -63,11 +79,11 @@ export const disciplines: Discipline[] = [
       'Foley & atmospheric sound design',
       'Surround & broadcast audio mixing'
     ],
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.filmAndContentProduction
   },
   {
     id: 'corporate-films',
-    number: '05',
+    number: '06',
     name: 'CORPORATE FILMS',
     shortTag: 'BOARDROOM TO BIG SCREEN',
     description: 'Turning boardroom visions into screen-worthy narratives. We capture the chaos, innovation, and human drive behind industry leaders.',
@@ -77,11 +93,11 @@ export const disciplines: Discipline[] = [
       'Executive & workforce narratives',
       'Product launch & investor presentation films'
     ],
-    image: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.projects.yadavMeasurement
   },
   {
     id: 'documentaries',
-    number: '06',
+    number: '07',
     name: 'DOCUMENTARIES',
     shortTag: 'RAW TRUTH & HUMANITY',
     description: 'Deeply observational non-fiction exploring cultural traditions, unsung heroes, social realities, and stories that deserve to be remembered.',
@@ -91,39 +107,11 @@ export const disciplines: Discipline[] = [
       'Archival research & humanistic interviews',
       'Impact & festival strategy'
     ],
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 'film-webseries',
-    number: '07',
-    name: 'FILMS & WEBSERIES',
-    shortTag: 'LONG-FORM NARRATIVES',
-    description: 'End-to-end creative and line production for narrative feature films, digital shorts, and episodic streaming series.',
-    deliverables: [
-      'Complete pre-to-post production support',
-      'Location scouting across India',
-      'Technical crew & equipment logistics',
-      'DCI cinema & OTT platform compliance'
-    ],
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 'music-videos',
-    number: '08',
-    name: 'MUSIC VIDEOS',
-    shortTag: 'RHYTHM & VISUAL ARTISTRY',
-    description: 'Music videos that blend rhythm, narrative, and visual artistry for independent artists and record labels.',
-    deliverables: [
-      'Visual treatment & conceptual choreography',
-      'Cinematic lighting installations',
-      'Rhythmic editorial pacing & stylized grading',
-      'Multi-platform release formats'
-    ],
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.projects.documentaries
   },
   {
     id: 'design-branding',
-    number: '09',
+    number: '08',
     name: 'DESIGN & CREATIVE BRANDING',
     shortTag: 'IDENTITIES BUILT TO ENDURE',
     description: 'We design identities and creative systems that aren’t just eye-catching, but strategically built to resonate, differentiate, and endure.',
@@ -133,11 +121,11 @@ export const disciplines: Discipline[] = [
       'Marketing collaterals aligning with brand voice',
       'Packaging design that tells its own story'
     ],
-    image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.designAndCreative
   },
   {
     id: 'experiential-activations',
-    number: '10',
+    number: '09',
     name: 'EXPERIENTIAL & ACTIVATIONS',
     shortTag: 'IMMERSIVE REAL-WORLD SPACES',
     description: 'Live experiences, product launches, and on-ground activations that immerse audiences, amplify brand stories, and leave memories that matter.',
@@ -147,11 +135,11 @@ export const disciplines: Discipline[] = [
       'Immersive installations & interactive spaces',
       'End-to-end event planning & execution'
     ],
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.experientialAndActivations
   },
   {
     id: 'digital-social',
-    number: '11',
+    number: '10',
     name: 'DIGITAL & SOCIAL STORYTELLING',
     shortTag: 'PLATFORM-FIRST CONTENT',
     description: 'Platform-first content that cuts through the clutter, captures attention, and builds authentic communities around your brand.',
@@ -161,6 +149,6 @@ export const disciplines: Discipline[] = [
       'Social campaigns that engage and convert',
       'Analytics-driven reach amplification'
     ],
-    image: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.digitalAndSocialStorytelling
   }
 ];

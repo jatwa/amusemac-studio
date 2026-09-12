@@ -1,3 +1,5 @@
+import { amusemacMedia } from '@/lib/media';
+
 export interface Article {
   id: string;
   title: string;
@@ -5,6 +7,7 @@ export interface Article {
   date: string;
   excerpt: string;
   readTime: string;
+  image: string;
 }
 
 export const cinematicArticles: Article[] = [
@@ -14,7 +17,8 @@ export const cinematicArticles: Article[] = [
     category: 'Film Industry Insights',
     date: '2024',
     readTime: '4 MIN READ',
-    excerpt: 'When it comes to crafting stories that resonate, visuals that captivate, and campaigns that convert, the right creative partner makes all the difference. How Amusemac Studio bridges audience pulse with brand nuance.'
+    excerpt: 'When it comes to crafting stories that resonate, visuals that captivate, and campaigns that convert, the right creative partner makes all the difference. How Amusemac Studio bridges audience pulse with brand nuance.',
+    image: amusemacMedia.blog.strategicPartnerships
   },
   {
     id: 'why-indias-film-production-specialists-stand-out',
@@ -22,7 +26,8 @@ export const cinematicArticles: Article[] = [
     category: 'Cinematic Techniques',
     date: '2024',
     readTime: '5 MIN READ',
-    excerpt: 'From bustling soundstages in Mumbai to remote field locations across India, production specialists blend heritage craftsmanship with cutting-edge technology to deliver cinematic marvels.'
+    excerpt: 'From bustling soundstages in Mumbai to remote field locations across India, production specialists blend heritage craftsmanship with cutting-edge technology to deliver cinematic marvels.',
+    image: amusemacMedia.blog.indiasSpecialists
   },
   {
     id: 'unique-offerings-amusemac-studio',
@@ -30,6 +35,7 @@ export const cinematicArticles: Article[] = [
     category: 'Studio Perspectives',
     date: '2024',
     readTime: '4 MIN READ',
-    excerpt: 'A powerhouse of imagination blending old-school storytelling grit with modern production techniques to forge emotions that linger far beyond the screen.'
+    excerpt: 'A powerhouse of imagination blending old-school storytelling grit with modern production techniques to forge emotions that linger far beyond the screen.',
+    image: amusemacMedia.blog.uniqueOfferings
   }
 ];

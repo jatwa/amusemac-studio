@@ -1,4 +1,6 @@
-﻿export interface ProcessStep {
+import { amusemacMedia } from '@/lib/media';
+
+export interface ProcessStep {
   step: string;
   title: string;
   subtitle: string;
@@ -13,68 +15,68 @@
 export const productionDesignSteps: ProcessStep[] = [
   {
     step: '01',
-    title: 'CONCEPT',
-    subtitle: 'THE DRAMATIC NEED FOR SPACE',
-    discipline: 'Script Deconstruction & Spatial Psychology',
-    description: 'We do not start with walls. We start with characters. Why is the ceiling low? Why does light leak through the cracked ventilator? We deconstruct the script to understand how physical architecture will externalize psychological tension.',
-    focusItems: ['Character Habitat Breakdown', 'Spatial Metaphors & Motifs', 'Emotional Color Key', 'Atmospheric Intent Document'],
-    quote: 'Architecture in cinema is the silent co-star that never forgets its lines.',
-    notebookSnippet: 'SCENE 14: The room must feel like an interrogation box even when empty. Drop the ceiling truss to 8.5 feet. Let the afternoon sun cast prison-like bar shadows across the desk.',
-    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1200&auto=format&fit=crop'
+    title: 'SCRIPT & PITCH',
+    subtitle: 'DEVELOPING THE NARRATIVE BLUEPRINT',
+    discipline: 'Script Deconstruction & Narrative Framework',
+    description: 'Every project begins with deep narrative alignment. We deconstruct the script to explore visual metaphors, character arcs, and atmospheric tone before cameras roll.',
+    focusItems: ['Pitch Deck & Treatment', 'Narrative Spatial Breakdown', 'Emotional Color Key', 'Atmospheric Intent Document'],
+    quote: 'Architecture and atmosphere in cinema are the silent co-stars that ground the entire story.',
+    notebookSnippet: 'CONCEPT NOTE: Align visual tone with character dilemma. Frame low ceilings and sharp angles to heighten tension before the reveal.',
+    image: amusemacMedia.services.scriptAndPitchDevelopment
   },
   {
     step: '02',
-    title: 'RESEARCH',
-    subtitle: 'THE TRUTH OF MATERIALS & PERIOD',
-    discipline: 'Historical Archives & Field Excavation',
-    description: 'Authenticity lives in the unglamorous margins. We dig through municipal town-planning archives in Fort Mumbai, interview master woodcarvers in Shekhawati, and test real lime plaster recipes from 1890.',
-    focusItems: ['Archival Blueprint Recovery', 'Authentic Material Samples', 'Prop & Artifact Provenance', 'Regional Weathering Patterns'],
-    quote: 'A fake prop pulls the audience out of the world in a fraction of a second.',
-    notebookSnippet: 'ARCHIVE NOTE: 19th c. Mewar havelis used surkhi (crushed burnt brick) in mortar, giving the walls a faint terracotta warmth under candle flames. Replicate with pigment-washed plaster.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop'
+    title: 'DESIGN & CREATIVE',
+    subtitle: 'THE TRUTH OF MATERIALS & FORM',
+    discipline: 'Concept Art, Moodboards & Spatial Mood',
+    description: 'We translate the narrative into high-fidelity mood boards, concept art, and palette keys, establishing the visual aesthetic and signature style.',
+    focusItems: ['Concept Moodboards', 'Authentic Material Samples', 'Prop & Artifact Curation', 'Spatial Color Palettes'],
+    quote: 'When the concept art is rigorous, the shoot becomes an act of joyful execution.',
+    notebookSnippet: 'WORKSHOP NOTE: Distressed wood and warm amber hues provide organic warmth against cool industrial backgrounds.',
+    image: amusemacMedia.services.designAndCreative
   },
   {
     step: '03',
-    title: 'VISUAL DEVELOPMENT',
-    subtitle: 'PAINTING THE FRAME BEFORE THE CAMERA',
-    discipline: 'Concept Art, Color Scripts & 3D Pre-vis',
-    description: 'We translate the research into high-fidelity concept illustrations, keyframe paintings, and 3D camera line-of-sight studies that align the Director, Cinematographer, and Art Department.',
-    focusItems: ['Keyframe Lighting Concepts', '3D Camera Lens Pre-visualization', 'Color Script Sequences', 'Scale Maquettes (1:20 & 1:50)'],
-    quote: 'When the concept art is rigorous, the shoot becomes an act of joyful execution.',
-    notebookSnippet: 'COLOR STUDY: Night exterior uses sodium vapor amber (#D89B37) cutting across deep cobalt rain shadows (#121A24). Avoid pure blacks.',
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200&auto=format&fit=crop'
+    title: 'PRODUCTION TEXTILES',
+    subtitle: 'FABRIC, PATINA & TEXTURE',
+    discipline: 'Cloth, Costume & Textile Craft',
+    description: 'From bespoke drapery to distressed wardrobe textures, our art department meticulously selects and treatments textiles to suit lighting and camera optics.',
+    focusItems: ['Custom Textile Dyeing', 'Material Tactility & Drape', 'Costume Aging & Distress', 'Set Dressing Fabrics'],
+    quote: 'Tactility creates realism that the lens registers instantly.',
+    notebookSnippet: 'TEXTILE SPEC: Heavy woven cotton washed down with raw tea stains to simulate five years of coastal humidity.',
+    image: amusemacMedia.services.clothAndProductionDesign
   },
   {
     step: '04',
-    title: 'DESIGN & MATERIALITY',
-    subtitle: 'DRAFTING EVERY TILE & TIMBER',
-    discipline: 'Architectural Working Drawings & Scenic Recipes',
-    description: 'Every door handle, floor tile pattern, distressed patina, and wall panel is drafted into precise construction blueprints. Our scenic artists develop custom chemical aging formulas for paint, rust, and dampness.',
-    focusItems: ['CAD / Blueprint Drafting Sets', 'Scenic Aging & Patina Swatches', 'Custom Hardware Fabrication Specs', 'Dressing & Prop Schedules'],
-    quote: 'New things look fake on camera. We give materials fifty years of lived history in fifty hours.',
-    notebookSnippet: 'SCENIC SPEC: Sandpaper edges of teak door frames at shoulder and knuckle height. Apply linseed oil + burnt umber wash to simulate 40 years of hand sweat and grease.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop'
+    title: 'LIGHTING RIG & SETUP',
+    subtitle: 'SCULPTING SHADOW & CONTRAST',
+    discipline: 'Gaffer Coordination & Lighting Architecture',
+    description: 'Working in tight tandem with cinematography, we sculpt light and shadow using custom-rigged fixtures, practical lamps, and volumetric atmosphere.',
+    focusItems: ['Practical Lamp Wiring', 'Atmospheric Haze & Diffusion', 'Shadow Pattern Grids', 'High-Key & Low-Key Calibration'],
+    quote: 'Light reveals character; shadow preserves mystery.',
+    notebookSnippet: 'LIGHTING NOTE: Soft bounced key on actor profile with hard rim lamp backlighting ambient dust motes.',
+    image: amusemacMedia.services.brandCampaign
   },
   {
     step: '05',
-    title: 'BUILD & DRESSING',
-    subtitle: 'THE SOUNDSTAGE RISES',
-    discipline: 'Carpentry, Structural Engineering & Dressing',
-    description: 'Over 60 master carpenters, welders, mould makers, and set dressers assemble the world inside Mumbai soundstages. Wild walls are mounted on heavy-duty tracks to grant cameras 360-degree freedom.',
-    focusItems: ['Soundstage Steel & Timber Frame', 'Floating “Wild Wall” Engineering', 'Tactile Prop Layering & Dressing', 'Practical Fixture Wiring'],
+    title: 'CAMERA & SOUNDSTAGE',
+    subtitle: 'THE WORLD COMES TO LIFE',
+    discipline: 'Camera Execution & Soundstage Management',
+    description: 'Precision camera choreography, dynamic lens packages, and live monitoring ensure every frame captures the planned aesthetic with absolute clarity.',
+    focusItems: ['Multi-Camera Synchronicity', 'Live Monitor Feeds', 'Steadicam & Dolly Tracks', 'On-Set Standby Art'],
     quote: 'When an actor walks onto the set and forgets they are in a studio, the battle is won.',
-    notebookSnippet: 'STAGE 2 RIG: Hang 4 wild walls on overhead dual I-beams for the 180-degree tracking master shot. All practical table lamps wired through dimmers to DMX board.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186156a?q=80&w=1200&auto=format&fit=crop'
+    notebookSnippet: 'SOUNDSTAGE SPEC: Keep floating wild walls ready for rapid 180-degree turnarounds during the afternoon sequence.',
+    image: amusemacMedia.services.filmAndContentProduction
   },
   {
     step: '06',
-    title: 'THE SHOOT',
-    subtitle: 'THE CAMERA ENTERS THE WORLD',
-    discipline: 'On-Set Standby Art & Continuous Synergy',
-    description: 'During principal photography, our art department standby team lives on the set floor—maintaining water effects, adjusting prop micro-positions, resetting dust levels, and collaborating live with the DP.',
-    focusItems: ['Standby Art Direction Crew', 'Live Atmosphere & Haze Maintenance', 'Action Prop Continuity', 'Camera Sightline Tweaks'],
-    quote: 'The world is now alive. Sound speed, camera roll, action.',
-    notebookSnippet: 'CALL SHEET DAY 8: Scene 32 requires wet-down of cobblestone street prior to every take. Keep standby distressing kit ready for breakdown on hero actor jacket.',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop'
+    title: 'EXPERIENTIAL & ACTIVATION',
+    subtitle: 'BEYOND THE PROSCENIUM',
+    discipline: 'On-Ground Storytelling & Brand Resonance',
+    description: 'Bringing stories into real-world spaces through immersive activations, experiential popups, and tactile audience touchpoints.',
+    focusItems: ['Immersive Set Popups', 'Audience Touchpoints', 'Interactive Live Installations', 'Brand Atmosphere'],
+    quote: 'Cinematic storytelling is not confined to screens—it shapes lived experience.',
+    notebookSnippet: 'ACTIVATION NOTE: Translate the film environment into a physical walk-through lounge with live ambient audio.',
+    image: amusemacMedia.services.experientialAndActivations
   }
 ];

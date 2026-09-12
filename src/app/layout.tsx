@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { FilmGrain } from '@/components/FilmGrain';
 import { CustomCursor } from '@/components/CustomCursor';
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop',
+        url: 'https://static.wixstatic.com/media/4ceae7_af6beeddd2d5400ca64a0ea8b24b3b8b~mv2.png',
         width: 1200,
         height: 630,
         alt: 'Amusemac Studio — Mad About Cinema'
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: 'Amusemac Studio — Mad About Cinema',
     description: 'Amusemac Studio is a Mumbai-based film production and creative studio working across films, advertising, documentaries, production design, art direction and visual storytelling.',
     creator: '@amusemac',
-    images: ['https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop']
+    images: ['https://static.wixstatic.com/media/4ceae7_af6beeddd2d5400ca64a0ea8b24b3b8b~mv2.png']
   },
   icons: {
     icon: '/favicon.ico',

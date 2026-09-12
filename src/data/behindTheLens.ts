@@ -1,4 +1,6 @@
-﻿export interface BehindTheLensMoment {
+import { amusemacMedia } from '@/lib/media';
+
+export interface BehindTheLensMoment {
   id: string;
   rollNumber: string;
   title: string;
@@ -21,12 +23,12 @@ export const behindTheLensMoments: BehindTheLensMoment[] = [
   {
     id: 'bts-01',
     rollNumber: 'ROLL 04 / EXPOSURE 12',
-    title: '3 AM Soundstage Plaster Wash',
-    location: 'Stage 4, Mehboob Studios, Bandra',
-    projectRef: 'BANDHISHEIN',
-    notes: 'The scenic team working through the final night to give the 28-foot palace arches an authentic 150-year weathered lime patina before the 7 AM actor call.',
+    title: 'Camera & Rig Calibration',
+    location: 'Mumbai Soundstage',
+    projectRef: 'DAINIK BHASKAR',
+    notes: 'Camera team aligning anamorphic optics and checking monitor feeds during high-key commercial lighting setup.',
     aspect: 'cinema',
-    image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1400&auto=format&fit=crop',
+    image: amusemacMedia.services.filmAndContentProduction,
     slateData: {
       roll: 'A04',
       scene: '44B',
@@ -39,12 +41,12 @@ export const behindTheLensMoments: BehindTheLensMoment[] = [
   {
     id: 'bts-02',
     rollNumber: 'ROLL 08 / EXPOSURE 03',
-    title: 'Monsoon Rain Rig Calibration',
-    location: 'Ballard Estate, South Mumbai',
-    projectRef: 'MIRAGE',
-    notes: 'Balancing the high-pressure overhead rain bar with vintage tungsten streetlamps to capture authentic water droplet flares on 35mm stock.',
+    title: 'Lighting Rig & Lightman In Action',
+    location: 'Production Studio Floor, Mumbai',
+    projectRef: 'BRITANNIA 50-50',
+    notes: 'Precision overhead lamp placement and barn door adjustment to carve out sharp contrast for national television spot.',
     aspect: 'portrait',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop',
+    image: amusemacMedia.services.brandCampaign,
     slateData: {
       roll: 'B02',
       scene: '12',
@@ -57,12 +59,12 @@ export const behindTheLensMoments: BehindTheLensMoment[] = [
   {
     id: 'bts-03',
     rollNumber: 'ROLL 11 / EXPOSURE 19',
-    title: 'High Altitude Audio Log',
-    location: 'Dzülke Ridge, Nagaland (2,400m)',
-    projectRef: 'NETTLE / NAGALAND',
-    notes: 'Sound recordist waiting for the midday valley wind to settle while recording the rhythmic wooden beat of Angami backstrap looms.',
+    title: 'Behind the Lens Production Floor',
+    location: 'On Location, Mumbai',
+    projectRef: 'AMUSEMAC CREW',
+    notes: 'Production crew on set coordinating simultaneous 3-camera coverage and audio sync for flagship campaign.',
     aspect: 'standard',
-    image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop',
+    image: amusemacMedia.team.behindTheLensBanner,
     slateData: {
       roll: 'C01',
       scene: 'DOC-09',
@@ -75,12 +77,12 @@ export const behindTheLensMoments: BehindTheLensMoment[] = [
   {
     id: 'bts-04',
     rollNumber: 'ROLL 14 / EXPOSURE 22',
-    title: 'Timber Maquette & Sightline Check',
+    title: 'Textile, Material & Costume Craft',
     location: 'Amusemac Design Workshop, Mumbai',
-    projectRef: 'THE ARCHITECT’S MEMORY',
-    notes: 'Checking camera angles on the 1:20 scale wooden architectural model to determine exact wild wall break points for the 50mm anamorphic lens.',
+    projectRef: 'SCRIPT TO SCREEN',
+    notes: 'Inspecting texture weave, period drape, and dye response under warm tungsten lighting for set dressing.',
     aspect: 'square',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop',
+    image: amusemacMedia.services.clothAndProductionDesign,
     slateData: {
       roll: 'PREVIS',
       scene: 'SET-A',
@@ -93,12 +95,12 @@ export const behindTheLensMoments: BehindTheLensMoment[] = [
   {
     id: 'bts-05',
     rollNumber: 'ROLL 19 / EXPOSURE 07',
-    title: 'Midnight Light Flare Test',
-    location: 'Mazgaon Docks, Mumbai Harbor',
-    projectRef: 'GULLY DREAMS',
-    notes: 'Testing neon tube bounce off wet ship-hull steel plates with the Steadicam operator at 2:30 AM.',
+    title: 'Design & Creative Direction Study',
+    location: 'Art Department Studio, Malad West',
+    projectRef: 'STUDIO CRAFT',
+    notes: 'Collaborative review of concept layouts, typography weights, and color boards prior to final pitch approval.',
     aspect: 'cinema',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1400&auto=format&fit=crop',
+    image: amusemacMedia.about.studioCraft,
     slateData: {
       roll: 'A07',
       scene: 'MV-01',

@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Compass, BookOpen, Layers, Camera, Clapperboard, Sparkles } from 'lucide-react';
+import { Compass, BookOpen } from 'lucide-react';
 import { soundEngine } from '@/lib/audio';
+import { amusemacMedia } from '@/lib/media';
 
 interface ScriptToScreenStep {
   step: string;
@@ -30,7 +31,7 @@ const scriptSteps: ScriptToScreenStep[] = [
       'Blending creative vision with market awareness'
     ],
     snippet: '“In this industry, a good story is half the battle — the other half is telling it in a way that gets heard.”',
-    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.scriptAndPitchDevelopment
   },
   {
     step: '02',
@@ -39,13 +40,13 @@ const scriptSteps: ScriptToScreenStep[] = [
     discipline: 'Production Design & Spatial Architecture',
     description: 'We construct physical narrative universes. Every frame we build balances art direction, detail, and emotion — because style only matters if it serves the story.',
     deliverables: [
-      'Soundstage builds & structural carpentry in Mumbai',
+      'Set construction & soundstage builds in Mumbai',
       'Period authenticity & textural scenic aging',
       'Hero prop sourcing & custom fabrication',
       'Atmospheric set dressing & practical fixtures'
     ],
     snippet: '“From the grandest set design to the smallest prop, we ensure stories don’t just look good — they live on screen.”',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.clothAndProductionDesign
   },
   {
     step: '03',
@@ -60,7 +61,7 @@ const scriptSteps: ScriptToScreenStep[] = [
       'Dynamic Steadicam & tracking movements'
     ],
     snippet: '“For us, the lens is more than a tool — it’s a way to transform ideas into lasting visual experiences.”',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.brandCampaign
   },
   {
     step: '04',
@@ -75,7 +76,7 @@ const scriptSteps: ScriptToScreenStep[] = [
       'Dolby & broadcast compliant delivery'
     ],
     snippet: '“Sound isn’t background — it’s the soul of the scene.”',
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.filmAndContentProduction
   },
   {
     step: '05',
@@ -90,7 +91,7 @@ const scriptSteps: ScriptToScreenStep[] = [
       'Rigorous schedule & budget discipline'
     ],
     snippet: '“Plan, Hustle, Retry, Perfect — turning ideas into visual masterpieces.”',
-    image: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.experientialAndActivations
   },
   {
     step: '06',
@@ -105,7 +106,7 @@ const scriptSteps: ScriptToScreenStep[] = [
       'Master delivery for theatrical & OTT'
     ],
     snippet: '“Every cut pulls you deeper into the story.”',
-    image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop'
+    image: amusemacMedia.services.designAndCreative
   }
 ];
 
@@ -172,7 +173,7 @@ export function ProductionDesignSection() {
           
           {/* Left 6 Cols: Stage Imagery */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xs border border-[#0D0D0C]/20 bg-[#E5DCD0]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xs border border-[#0D0D0C]/20 bg-[#E5DCD0] shadow-md">
               <Image
                 src={activeStep.image}
                 alt={activeStep.title}
