@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-ivory: #F8F5EE;
+  --bg-ivory-warm: #F3EDE2;
+  --bg-charcoal: #121210;
+  --bg-dark: #090908;
+  --text-primary-dark: #0D0D0C;
+  --text-muted-dark: #66635B;
+  --text-primary-light: #F4EFE6;
+  --text-muted-light: #9B9890;
+  --accent-ochre: #D89B37;
+  --accent-sienna: #8F4832;
+  --accent-slate: #545F6A;
+  --border-dark: rgba(18, 18, 16, 0.12);
+  --border-light: rgba(244, 239, 230, 0.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: #121210;
+  color: #F4EFE6;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #D89B37;
+  color: #090908;
+}
+
+/* Custom Typography & Utility Classes */
+.font-editorial {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-mono-film {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  letter-spacing: -0.01em;
+}
+
+/* Film Title Card Styles */
+.film-title-huge {
+  font-size: clamp(3.2rem, 13vw, 14rem);
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-weight: 850;
+}
+
+.film-title-xl {
+  font-size: clamp(2.4rem, 7.5vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.film-title-lg {
+  font-size: clamp(1.8rem, 4.8vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 750;
+}
+
+/* Film Sprockets & Perforations */
+.film-perforations-top {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 30%, transparent 35%);
+  background-size: 28px 14px;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+}
+
+/* Custom Scrollbar for Horizontal Scrollers */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #090908;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2926;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D89B37;
+}
+
+/* Aspect Ratios */
+.aspect-cinema {
+  aspect-ratio: 2.39 / 1;
+}
+
+.aspect-academy {
+  aspect-ratio: 1.33 / 1;
+}
+
+.aspect-standard {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-portrait-film {
+  aspect-ratio: 4 / 5;
+}
+
+/* Smooth Image Hover Filter */
+.film-image {
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.film-image:hover {
+  transform: scale(1.03);
+}
+
+/* Section Colors */
+.section-ivory {
+  background-color: #F8F5EE;
+  color: #0D0D0C;
+}
+
+.section-dark {
+  background-color: #121210;
+  color: #F4EFE6;
+}
+
+.section-black {
+  background-color: #090908;
+  color: #F4EFE6;
 }
